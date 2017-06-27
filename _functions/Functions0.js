@@ -350,22 +350,22 @@ function FormatHD() {
 
 //format the date (format)
 function FormatDay() {
-	var dateForm = What("DateFormat_Remember");
-	var dateInputForm = returnInputForm(dateForm);
-	var dateInputFormLong = dateInputForm.replace(/y+/, "year").replace(/d+/, "day").replace(/m+/, "month");
-	var dateValue = util.scand(dateInputForm, event.value);
-	if (dateValue == null) {
-		app.alert({
-			cMsg : "Please enter a valid date of the form \"" + dateInputFormLong + "\".\n\nYou can change the way the date is displayed with the \"Logsheet Options\" button above.",
-			cTitle : "Invalid date format",
-			nIcon : 1
-		});
-		event.value = "";
-	} else if (event.value === "") {
-		event.value = "";
-	} else {
-		event.value = util.printd(dateForm, dateValue);
-	}
+	var isDate = util.scand('yy-mm-dd', event.value);
+	event.value = event.value && isDate ? util.printd(What("DateFormat_Remember"), isDate) : "";
+};
+
+//make sure the date is entered in the correct format (keystroke)
+function KeystrokeDay() {
+	if (event.willCommit && event.value) {
+		var isDate = util.scand('yy-mm-dd', event.value);
+		if (!isDate) {
+			app.alert({
+				cMsg : "Please enter a valid date using the date-picker (the little arrow in the field) or enter the date manually using of the form \"Year-Month-Day\".\n\nYou can change the way the date is displayed with the \"Logsheet Options\" button above.",
+				cTitle : "Invalid date format",
+				nIcon : 1
+			});
+		};
+	};
 };
 
 //a field "format" function to add a space at the start and end of the field, to make sure it looks better on the sheet
@@ -476,7 +476,7 @@ function clean(input, remove, diacretics) {
 
 //convert string to usable, complex regex
 function MakeRegex(inputString, extraRegex) {
-	return RegExp("^(?=.*\\b" + inputString.replace(/\W/g, " ").replace(/^ +| +$/g, "").RegEscape().replace(/('?s'?)\b/ig, "\($1\)?").replace(/ +/g, "\\b)(?=.*\\b") + "\\b)" + (extraRegex ? extraRegex : "") + ".*$", "i");
+	return RegExp("^(?=.*\\b" + inputString.replace(/\W/g, " ").replace(/^ +| +$/g, "").RegEscape().replace(/('?s'?)\b/ig, "\($1\)?").replace(/ +/g, "s?\\b)(?=.*\\b") + "s?\\b)" + (extraRegex ? extraRegex : "") + ".*$", "i");
 };
 
 function toUni(input) {
@@ -953,4 +953,9 @@ function RollD(die) {
 function SetDisAdv() {
 	var Adv = (/Adv$/).test(event.target.name);
 	this.getField(event.target.name.replace(Adv ? "Adv" : "Dis", Adv ? "Dis" : "Adv")).value = "Off";
+};
+
+//see if two strings don't differ too much in length
+function similarLen(str1, str2) {
+	return Math.abs(str1.length - str2.length) < 5 || Math.abs(str1.length, str2.length) / Math.max(str1.length, str2.length) < 0.2;
 };

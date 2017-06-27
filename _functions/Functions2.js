@@ -1758,15 +1758,13 @@ function changeCompType(inputType, prefix) {
 function changeCompDialog(prefix) {
 	if (!IsNotImport) return;
 	//The dialog for setting the pages to print
+	var theTxt = "A familiar or mount's type changes from beast to either celestial, fey, or fiend. Please select one.";
 	var theDialog = {
 		//variables to be set by the calling function
 		bType : "Celestial",
 
 		//when starting the dialog
 		initialize : function (dialog) {
-			dialog.load({
-				"txt0" : "A familiar or mount's type changes from beast to either celestial, fey, or fiend. Please select one."
-			});
 		},
 		
 		//when pressing the ok button
@@ -1797,10 +1795,11 @@ function changeCompDialog(prefix) {
 				}, {
 					type : "static_text",
 					item_id : "txt0",
+					wrap_name : true,
 					alignment : "align_fill",
 					font : "dialog",
-					char_height : 3,
-					char_width : 30
+					char_width : 30,
+					name : theTxt
 				}, {
 					type : "cluster",
 					align_children : "align_distribute",
@@ -4016,46 +4015,19 @@ function ShowCalcBoxesLines(input) {
 	}
 }
 
-// give the default inputform
-function returnInputForm(displayForm, asArray) {
-	var theReturn = "dd/mm/yyyy";
-	if (displayForm.substr(0,1) === "m") {
-		theReturn = "mm/dd/yyyy";
-	} else if (displayForm.substr(0,1) === "y") {
-		theReturn = "yyyy/mm/dd";
-	}
-	if (asArray) theReturn = theReturn.split("/");
-	return theReturn;
-}
-
 //chane the format of all the date fields of the AL log page, and change the month-day order if appropriate
 function UpdateALdateFormat(dateForm) {	
 	dateForm = dateForm ? dateForm : What("DateFormat_Remember");
-	var oldDateForm = What("DateFormat_Remember");
-	var oldDateInputFormA = returnInputForm(oldDateForm, true);
 	Value("DateFormat_Remember", dateForm);
-	var dateInputForm = returnInputForm(dateForm);
-	var dateInputFormA = dateInputForm.split("/");
-	var dateInputFormLong = dateInputForm.replace(/y+/, "year").replace(/d+/, "day").replace(/m+/, "month");
-	var changeOrder = dateForm.substr(0,1) !== oldDateForm.substr(0,1); // see if the month and day order should be changed or not
-	
 	var ALlogA = What("Template.extras.ALlog").split(",");
 	for (var tA = 0; tA < ALlogA.length; tA++) {
 		var prefix = ALlogA[tA];
 		for (var i = 1; i < FieldNumbers.logs; i++) {
 			var dateFld = prefix + "AdvLog." + i + ".date";
-			var dateFldValue = What(dateFld);
-			if (dateFldValue && changeOrder && dateFldValue.match(/\d+/g).length === 3) {
-				dateFldValue = dateFldValue.match(/\d+/g);
-				dateFldValue = dateFldValue[oldDateInputFormA.indexOf(dateInputFormA[0])] + "/" + dateFldValue[oldDateInputFormA.indexOf(dateInputFormA[1])] + "/" + dateFldValue[oldDateInputFormA.indexOf(dateInputFormA[2])];
-			}
-			if (dateFldValue && util.scand(dateInputForm, dateFldValue)) {
-				Value(dateFld, dateFldValue);
-			}
-			AddTooltip(dateFld, "Write the date of the session or event here, using the format \"" + dateInputFormLong + "\".\n\nYou can change this format using the \"Logsheet Options\" button above.");
-		}
-	}
-}
+			Value(dateFld, What(dateFld));
+		};
+	};
+};
 
 //return the value of the field that this notes field (field calculation)
 function CalcCompNotes() {
@@ -4564,7 +4536,7 @@ function UpdateRevisedRangerCompanions(deleteIt) {
 
 //Give a pop-up dialogue when the amount of Ability Score Improvements after changing level
 function CountASIs() {
-	if (!AbilityScores.improvements.classlvl) UpdateTooltips();
+	UpdateTooltips();
 	var newASI = 0;
 	for (var nClass in classes.known) {
 		var clLvl = Math.min(CurrentClasses[nClass].improvements.length, classes.known[nClass].level);
@@ -4572,8 +4544,8 @@ function CountASIs() {
 	}
 	var oldASI = 0;
 	for (var oClass in classes.old) {
-		clLvl = Math.min(CurrentClasses[nClass].improvements.length, classes.old[oClass].classlevel);
-		oldASI += clLvl ? CurrentClasses[nClass].improvements[clLvl - 1] : 0;
+		clLvl = Math.min(CurrentClasses[oClass].improvements.length, classes.old[oClass].classlevel);
+		oldASI += clLvl ? CurrentClasses[oClass].improvements[clLvl - 1] : 0;
 	}
 	if (newASI !== oldASI) {		
 		var pTxt = "The change in level has granted your character " + toUni(newASI - oldASI) + " additional " + toUni("Ability Score Improvement") + "(s)!\n\nThe current total of Ability Score Improvements is:" + AbilityScores.improvements.classlvl + "\n\nYou can use these in one of two ways:\n    1. Divide 2 points over ability scores (to max 20);\n        (See the Ability Scores dialogue, i.e. \"Scores\" button.)\n    2. Take 1 feat.\n        (See the Feats section on the sheet.)";
@@ -4893,8 +4865,7 @@ function addALlogEnrry() {
 	Value(baseFld + "magicItems.gain", (total >= 0 ? "+" : "") + total);
 	
 	// set today's date
-	var dateInputForm = returnInputForm(What("DateFormat_Remember"));
-	Value(baseFld + "date", util.printd(dateInputForm, new Date()));
+	Value(baseFld + "date", util.printd('yy-mm-dd', new Date()));
 	
 	// set the other fields, if a previous entry was detected
 	if (emptyLog[2] !== "stop") {
@@ -5113,12 +5084,12 @@ function PatreonStatement() {
 			var oButIcon = this.getField("SaveIMG.Patreon").buttonGetIcon();
 			var oMyIcon = util.iconStreamFromIcon(oButIcon);	
 			
+			var theTxt = "If you like this sheet, please consider becoming a patron at the Patreon for MPMB's Character Record Sheet.\n\nWith your contribution on Patreon:\n   \u2022 I can add all Unearthed Arcana material right after it has been released.\n   \u2022 You get to choose which new features get added.\n   \u2022 Your favourite third-party material gets added.\n   \u2022 You get instant access and alerts when new versions are released.";
+			var theTxt2 = "Don't worry, the sheet will stay as 'Pay What You Want' on DMs Guild.\nHowever, if you feel like contributing more, it will all flow back into expanding the sheets' features and content.\n\nYou can always visit the Patreon webpage using the bottom \"Contact MPMB\" bookmarks.";
 			var PatreonDialog = {
 				initialize : function (dialog) {
 					dialog.load({
-						"img1" : oMyIcon,
-						"txt1" : "If you like this sheet, please consider becoming a patron at the Patreon for MPMB's Character Record Sheet.\n\nWith your contribution on Patreon:\n   \u2022 I can add all Unearthed Arcana material right after it has been released.\n   \u2022 You get to choose which new features get added.\n   \u2022 Your favourite third-party material gets added.\n   \u2022 You get instant access and alerts when new versions are released.",
-						"txt2" : "Don't worry, the sheet will stay as 'Pay What You Want' on DMs Guild.\nHowever, if you feel like contributing more, it will all flow back into expanding the sheets' features and content.\n\nYou can always visit the Patreon webpage using the bottom \"Contact MPMB\" bookmarks."
+						"img1" : oMyIcon
 					});
 				},
 				bPat : function (dialog) {contactMPMB("patreon");},
@@ -5137,6 +5108,7 @@ function PatreonStatement() {
 								height : 63
 							}, {
 								type : "view",
+								char_width : 40,
 								elements : [{
 									type : "static_text",
 									name : "Become a patron on Patreon",
@@ -5151,8 +5123,9 @@ function PatreonStatement() {
 									item_id : "txt1",
 									alignment : "align_fill",
 									font : "dialog",
-									char_height : 13,
-									char_width : 40
+									wrap_name : true,
+									char_width : 40,
+									name : theTxt
 								}, {
 									type : "button",
 									font : "heading",
@@ -5165,8 +5138,9 @@ function PatreonStatement() {
 									item_id : "txt2",
 									alignment : "align_fill",
 									font : "dialog",
-									char_height : 10,
-									char_width : 40
+									wrap_name : true,
+									char_width : 40,
+									name : theTxt2
 								}]
 							}]
 						}, {
@@ -5414,6 +5388,7 @@ function ApplyWeapon(inputText, fldName, isReCalc, onlyProf) {
 	tDoc.calculate = IsNotReset;
 	tDoc.delay = !IsNotReset;
 	if (IsNotReset) tDoc.calculateNow();
+	if (QI && (fldName === event.target.name || Number(fldNmbr) === FieldNumbers.attacks)) SetOffHandAction();
 };
 
 //calculate the attack damage and to hit, can be called from any of the attack fields (sets the fields)
@@ -5447,6 +5422,7 @@ function CalcAttackDmgHit(fldName) {
 	if (!WeaponText || (/^(| |empty)$/).test(fields.Mod)) {
 		Value(fldBase + "Damage", "");
 		Value(fldBase + "To Hit", "");
+		if (QI) CurrentWeapons.offHands[ArrayNmbr] = false;
 		return;
 	};
 	
@@ -5471,11 +5447,9 @@ function CalcAttackDmgHit(fldName) {
 		var isRangedWeapon = !isSpell && (/^(?!.*melee).*\d+.*$/i).test(fields.Range);
 
 		// see if this is a off-hand attack and the modToDmg shouldn't be use
-		var isOffHand = isMeleeWeapon && (/^(?!.*(spell|cantrip))(?=.*(off.{0,3}hand|secondary)).*$/i).test(WeaponText) ? true : false;
-		if (isOffHand) {
-			AddAction("bonus action", "Off-hand Attack");
-			output.modToDmg = false;
-		};
+		var isOffHand = isMeleeWeapon && (/^(?!.*(spell|cantrip))(?=.*(off.{0,3}hand|secondary)).*$/i).test(WeaponText);
+		CurrentWeapons.offHands[ArrayNmbr] = isOffHand;
+		if (isOffHand) output.modToDmg = output.mod < 0;
 
 		//add the BlueText field value of the corresponding spellcasting class
 		if (thisWeapon[3] && thisWeapon[4].length) {
@@ -5564,6 +5538,12 @@ function CalcAttackDmgHit(fldName) {
 	};
 };
 
+//see if the bonus action for Off-hand attack is needed or not
+function SetOffHandAction() {
+	var areOffHands = CurrentWeapons.offHands.some( function(n) { return n});
+	tDoc[(areOffHands ? "Add" : "Remove") + "Action"]("bonus action", "Off-hand Attack");
+};
+
 //a way to show a very long piece of text without the dialogue overflowing the screen
 function ShowDialog(hdr, strng) {
 	if (strng === "sources") {
@@ -5591,13 +5571,9 @@ function ShowDialog(hdr, strng) {
 		};
 	}
 	var ShowString_dialog = {
-		header : hdr,
-		string : strng,
 		initialize : function(dialog) {
 			dialog.load({
-				"txt0" : "[Can't see the 'OK' button at the bottom? Use ENTER to close this dialog]",
-				"head" : this.header,
-				"Eval" : this.string.replace(/^\n/, "").replace(/^\n/, "")
+				"Eval" : strng.replace(/^\n/, "").replace(/^\n/, "")
 			});
 		},
 		description : {
@@ -5612,16 +5588,18 @@ function ShowDialog(hdr, strng) {
 						item_id : "txt0",
 						alignment : "align_fill",
 						font : "dialog",
+						wrap_name : true,
 						height : 20,
-						width : 550
+						name : "[Can't see the 'OK' button at the bottom? Use ENTER to close this dialog]"
 					}, {
 						type : "static_text",
 						item_id : "head",
 						alignment : "align_fill",
 						font : "heading",
 						bold : true,
-						height : 21,
-						width : 550
+						wrap_name : true,
+						width : 550,
+						name : hdr
 					}, {
 						type : "edit_text",
 						item_id : "Eval",
@@ -5717,9 +5695,9 @@ function SetThisFldVal() {
 						type : "static_text",
 						alignment : "align_fill",
 						item_id : "txt0",
+						wrap_name : true,
 						name : "Please enter the value you want to set for the field:",
-						char_width : 35,
-						height : 20
+						char_width : 35
 					}, {
 						type : "edit_text",
 						alignment : "align_center",
@@ -5730,9 +5708,9 @@ function SetThisFldVal() {
 						type : "static_text",
 						alignment : "align_fill",
 						item_id : "txt1",
+						wrap_name : true,
 						name : "The field won't appear to change until you click/tab out of it.",
-						char_width : 35,
-						height : 20
+						char_width : 35
 					}, {
 						type : "ok_cancel"
 					}]

@@ -462,7 +462,7 @@ var WeaponsList = {
 		type : "Simple",
 		damage : [1, 4, "bludgeoning"],
 		range : "30/120 ft",
-		weight : 0.000001,
+		weight : 0.001,
 		description : "Ammunition",
 		abilitytodamage : true,
 		ammo : "bullet"
@@ -963,6 +963,18 @@ var WeaponsList = {
 		description : "Str save; success - nothing; fail - pulled 10 ft closer to me, only take damage if end within 5 ft of me (SCAG 143)",
 		abilitytodamage : false,
 		dc : true
+	},
+	"magic stone" : {
+		regExpSearch : /^(?=.*magic)(?=.*stone).*$/i,
+		name : "Magic Stone",
+		source : ["E", 20],
+		list : "spell",
+		ability : 5,
+		type : "Cantrip",
+		damage : [1, 6, "bludgeoning"],
+		range : "60/120 ft",
+		description : "Produces 3 stones that each can be thrown (60 ft) or hurled with a sling (120 ft) as a spell attack (EE 20)",
+		abilitytodamage : true
 	},
 	"poison spray" : {
 		regExpSearch : /^(?=.*poison)(?=.*spray).*$/i,
@@ -2571,7 +2583,7 @@ var GearList = {
 	},
 	"waterskin" : {
 		infoname : "Waterskin [2 sp]",
-		name : "Waterskin (full)",
+		name : "Waterskin",
 		amount : "",
 		weight : 5
 	},
