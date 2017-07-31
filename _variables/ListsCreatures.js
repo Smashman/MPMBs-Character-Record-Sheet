@@ -4199,17 +4199,17 @@ var CreatureList = {
 		proficiencyBonus : 3,
 		attacksAction : 2,
 		attacks : [{
-				name : "Tail",
-				ability : 1,
-				damage : [3, 8, "bludgeoning"], //[#, die, type] "" for die is allowed
-				range : "Melee (10 ft)",
-				description : "Medium or smaller target is grappled and restrained (escape DC 17); Can't use bite again until grapple ends"
-			}, {
 				name : "Bite",
 				ability : 1,
 				damage : [4, 12, "piercing"], //[#, die, type] "" for die is allowed
 				range : "Melee (10 ft)",
-				description : "One bite and one tail attack to a different as an Attack action"
+				description : "Medium or smaller target is grappled and restrained (escape DC 17); Can't use bite again until grapple ends"
+			}, {
+				name : "Tail",
+				ability : 1,
+				damage : [3, 8, "bludgeoning"], //[#, die, type] "" for die is allowed
+				range : "Melee (10 ft)",
+				description : "One bite and one tail attack to different targets as an Attack action"
 			}
 		],
 		traits : [{
@@ -5286,7 +5286,7 @@ var CreatureList = {
 		],
 		traits : [{
 				name : "Pack Tactics",
-				description : "The velociraptor has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 ft of the creature and the ally isn't incapacitated."
+				description : "The velociraptor has advantage on an attack roll against a creature if at least one of the velociraptor's allies is within 5 ft of the creature and the ally isn't incapacitated."
 			}
 		]
 	},

@@ -359,11 +359,14 @@ function KeystrokeDay() {
 	if (event.willCommit && event.value) {
 		var isDate = util.scand('yy-mm-dd', event.value);
 		if (!isDate) {
-			app.alert({
-				cMsg : "Please enter a valid date using the date-picker (the little arrow in the field) or enter the date manually using of the form \"Year-Month-Day\".\n\nYou can change the way the date is displayed with the \"Logsheet Options\" button above.",
-				cTitle : "Invalid date format",
-				nIcon : 1
-			});
+			event.value = "";
+			if (IsNotImport) {
+				app.alert({
+					cMsg : "Please enter a valid date using the date-picker (the little arrow in the field) or enter the date manually using of the form \"Year-Month-Day\".\n\nYou can change the way the date is displayed with the \"Logsheet Options\" at the top of each Adventurers Logsheet. Note that the format of the date in the field never changes, but only the way it is displayed.",
+					cTitle : "Invalid date format",
+					nIcon : 1
+				});
+			};
 		};
 	};
 };
@@ -958,4 +961,26 @@ function SetDisAdv() {
 //see if two strings don't differ too much in length
 function similarLen(str1, str2) {
 	return Math.abs(str1.length - str2.length) < 5 || Math.abs(str1.length, str2.length) / Math.max(str1.length, str2.length) < 0.2;
+};
+
+//test if a template is visible or not
+function isTemplVis(tempNm, returnPrefix) {
+	var isVisible = false;
+	var multiTemp = TemplatesWithExtras.indexOf(tempNm) !== -1;
+	var firstTempl = "";
+	if (!multiTemp) {
+		var tempPage = tDoc.getField(BookMarkList[tempNm]).page;
+		isVisible = (isArray(tempPage) ? Math.max.apply(Math, tempPage) : tempPage) !== -1;
+	} else {
+		isVisible = What("Template.extras." + tempNm) !== "";
+		firstTempl = What("Template.extras." + tempNm).split(",")[1];
+	};
+	if (!isVisible && tempNm === "SSfront") {
+		isVisible = isTemplVis("SSmore", returnPrefix);
+		if (isArray(isVisible)) {
+			firstTempl = isVisible[1];
+			isVisible = isVisible[0];
+		};
+	};
+	return returnPrefix && firstTempl ? [isVisible, firstTempl] : isVisible;
 };

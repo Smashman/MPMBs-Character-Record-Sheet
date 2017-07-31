@@ -138,7 +138,7 @@ var ClassList = {
 		die : 8,
 		saves : ["Dex", "Cha"],
 		skills : ["\n\n" + toUni("Bard") + ": Choose any three skills.", "\n\n" + toUni("Multiclass Bard") + ": Choose any one skill."],
-		tools : ["Three musical instruments", "One musical instrument"],
+		tools : ["Three musical instruments", "A musical instrument"],
 		armor : [
 			[true, false, false, false],
 			[true, false, false, false]
@@ -367,7 +367,7 @@ var ClassList = {
 				minlevel : 2,
 				description : "\n   " + "Choose a Circle you can identify with and put it in the \"Class\" field on the first page" + "\n   " + "Choose either the Circle of the Land or the Circle of the Moon"
 			},
-			"wild shape" : {
+			"subclassfeature2.wild shape" : {
 				name : "Wild Shape",
 				source : ["P", 66],
 				minlevel : 2,
@@ -2729,7 +2729,7 @@ var ClassSubList = {
 				minlevel : 2,
 				description : "\n   " + "I am able to transform into more dangerous animal forms when using Wild Shape"
 			},
-			"wild shape" : {
+			"subclassfeature2.wild shape" : {
 				name : "Wild Shape",
 				source : ["P", 66],
 				minlevel : 2,
@@ -4630,7 +4630,7 @@ var ClassSubList = {
 				name : "Portent",
 				source : ["P", 116],
 				minlevel : 2,
-				description : "\n   " + "After a short or long rest, I roll dice and keep results to be used before my next rest" + "\n   " + "A result can replace an attack/save/ability check made by me or a creature I can see" + "\n   " + "I choose to switch them before the dice to be replaced are rolled; Max once per turn",
+				description : "\n   " + "After a long rest, I roll dice and keep the results to be used before my next rest" + "\n   " + "A result can replace an attack/save/ability check made by me or a creature I can see" + "\n   " + "I choose to switch them before the dice to be replaced are rolled; Max once per turn",
 				additional : ["", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "2d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest", "3d20 after a long rest"]
 			},
 			"subclassfeature6" : {
