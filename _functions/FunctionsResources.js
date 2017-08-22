@@ -408,6 +408,7 @@ function resourceDecisionDialog(atOpening, atReset) {
 		bAtk : function (dialog) {resourceSelectionDialog("weapon");},
 		bArm : function (dialog) {resourceSelectionDialog("armor");},
 		bAmm : function (dialog) {resourceSelectionDialog("ammo");},
+		bMIt : function (dialog) {resourceSelectionDialog("magicitem");},
 		bLin : function (dialog) {if (this.sourceLink) app.launchURL(this.sourceLink, true)},
 		bSrc : function (dialog) { ShowDialog("List of Sources, sorted by abbreviation", "sources"); },
 		description : {
@@ -537,7 +538,7 @@ function resourceDecisionDialog(atOpening, atReset) {
 							font : "dialog",
 							bold : true,
 							item_id : "bSpe",
-							name : "Spells/Psionics",
+							name : "Spells / Psionics",
 							alignment : "align_center"
 						}] : [{
 							type : "button",
@@ -579,7 +580,7 @@ function resourceDecisionDialog(atOpening, atReset) {
 							font : "dialog",
 							bold : true,
 							item_id : "bAtk",
-							name : "Weapons/Attacks"
+							name : "Weapons / Attacks"
 						}, {
 							type : "button",
 							font : "dialog",
@@ -596,8 +597,14 @@ function resourceDecisionDialog(atOpening, atReset) {
 							type : "button",
 							font : "dialog",
 							bold : true,
+							item_id : "bMIt",
+							name : "Magic Items"
+						}, {
+							type : "button",
+							font : "dialog",
+							bold : true,
 							item_id : "bSpe",
-							name : "Spells/Psionics"
+							name : "Spells / Psionics"
 						}, {
 							type : "button",
 							font : "dialog",
@@ -887,6 +894,24 @@ function resourceSelectionDialog(type) {
 			var uTest = testSource(u, ArmourList[u], CSatt, true);
 			if (uTest === "source") continue;
 			var uGroup = ArmourList[u].type ? ArmourList[u].type.capitalize() : "Other";
+			refObj[uName] = u;
+			if (!exclObj[uGroup]) exclObj[uGroup] = {};
+			if (!inclObj[uGroup]) inclObj[uGroup] = {};
+			if (uTest) {
+				exclObj[uGroup][uName] = -1;
+			} else {
+				inclObj[uGroup][uName] = -1;
+			}
+		};
+		break;
+	 case "magicitem" :
+		var theName = "Magic Items";
+		var CSatt = "magicitemExcl";
+		for (var u in MagicItemList) {
+			var uName = amendSource(MagicItemList[u].name, MagicItemList[u]);
+			var uTest = testSource(u, MagicItemList[u], CSatt, true);
+			if (uTest === "source") continue;
+			var uGroup = MagicItemList[u].category ? MagicItemList[u].category.capitalize() : "Other";
 			refObj[uName] = u;
 			if (!exclObj[uGroup]) exclObj[uGroup] = {};
 			if (!inclObj[uGroup]) inclObj[uGroup] = {};

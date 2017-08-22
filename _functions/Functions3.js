@@ -1,7 +1,17 @@
 //See if a string is the name of a magic item and return the MagicItemList attribute
-function ParseMagicItem(input) {
-	MagicItemList
-	
+function ParseMagicItem(Inputtxt) {
+	if (!Inputtxt) return "";
+	Inputtxt = removeDiacritics(Inputtxt);
+	var tempFound = 0;
+	var temp = "";
+	for (var key in MagicItemList) {
+		if (testSource(key, MagicItemList[key], "magicitemExcl")) continue; // test if the feat or its source isn't excluded
+		if (tempFound < key.length && Inputtxt.toLowerCase().indexOf(MagicItemList[key].name.toLowerCase()) !== -1) {
+			temp = key;
+			tempFound = key.length;
+		};
+	};
+	return temp;
 };
 
 function FindMagicItems(ArrayNmbr) {
@@ -36,7 +46,31 @@ function FindMagicItems(ArrayNmbr) {
 };
 
 function ApplyMagicItem() {
+	if (IsSetDropDowns) return; // when just changing the dropdowns, don't do anything
+};
+
+function SetMagicItemsdropdown() {
+	var string = ""; // the tooltip for the Magic Item fields
 	
+	var TheList = [];
+	for (var key in MagicItemList) {
+		var miKey = MagicItemList[key];
+		if (testSource(key, miKey, "magicitemExcl")) continue; // test if the feat or its source isn't excluded
+		var miNm = miKey.name.capitalize();
+		if (TheList.indexOf(miNm) === -1) TheList.push(miNm);
+	};
+	TheList.sort();
+	TheList.unshift("");
+	
+	if (tDoc.getField("Extra.Magic Item 1").submitName === TheList.toSource()) return; //no changes, so no reason to do this
+	tDoc.getField("Extra.Magic Item 1").submitName = TheList.toSource();
+	
+	for (var i = 1; i <= FieldNumbers.magicitems; i++) {
+		var theFld = "Extra.Magic Item " + i;
+		var theFldVal = What(theFld);
+		tDoc.getField(theFld).setItems(TheList);
+		if (theFldVal !== What(theFld)) Value(theFld, theFldVal, string);
+	};
 };
 
 /* TO DO:
