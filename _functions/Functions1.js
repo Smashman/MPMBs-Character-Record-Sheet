@@ -1965,7 +1965,7 @@ function FindClasses(Event) {
 		
 		for (var f = 0; f < fAB.length; f++) {
 			var propAtt = fTrans[fAB[f]];
-			if (subClObj && propAtt.list === "ClassList" && ((/subclassfeature/i).test(propAtt.name) || subClObj.features[propAtt.name])) continue; // skip any features from the class if a subclass is known and has that same feature
+			if (subClObj && propAtt.list === "ClassList" && subClObj.features[propAtt.name]) continue; // skip any features from the class if a subclass is known and has that same feature
 			Temps.features[propAtt.name] = tDoc[propAtt.list][propAtt.item].features[propAtt.name];
 		}
 
@@ -5706,7 +5706,7 @@ function UpdateLevelFeatures(Typeswitch, raceLvl) {
 							RemoveClassFeatureChoice(aClass, prop);
 						}
 					}
-					if (CheckLVL && prop.indexOf("wild shape") !== -1) {
+					if (prop.indexOf("wild shape") !== -1) {
 						isWildShape = [newClassLvl[aClass], Fea.Use, Fea.Recov, Fea.Add];
 						WSinUse = true;
 					}
@@ -6266,8 +6266,8 @@ function CalcAC() {
 		event.value = "";
 	} else {
 		event.value = Number(ACbase) + Number(ACshield) + Number(ACdex) + Number(ACmagic) + Number(ACmisc1) + Number(ACmisc2);
-	}
-}
+	};
+};
 
 function SetToManual_Button() {
 	tDoc.delay = true;
@@ -10023,12 +10023,12 @@ function AddUserScript() {
 					}, {
 						type : "view",
 						align_children : "align_row",
-						width : 750,
+						alignment : "align_fill",
 						elements : [{
 							type : "button",
 							name : "<< Go to Previous Dialogue",
 							item_id : "bPre",
-							alignment : "align_right"
+							alignment : "align_left"
 						}, {
 							type : "ok_cancel_other",
 							other_name : "Open Another Dialogue",
