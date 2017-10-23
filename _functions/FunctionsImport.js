@@ -1746,6 +1746,7 @@ function MakeDescriptionExportArray() {
 
 function MakeXFDFExport(partial) {
 	if (partial !== "all") { // if given the command to only partially export
+		MakeSkillsMenu_SkillsOptions(["go", "alphabeta"]); // first make sure the skills are sorted alphabetically
 		var theArray = partial === "equipment" ? MakeEquipmentExportArray() : (partial === "description" ? MakeDescriptionExportArray() : MakeExportArray());
 		if (!theArray) {
 			app.alert("Nothing was found that was worthy to export. None of the fields that are not auto-filled seem to have anything but there default values in them. If you still want to export the settings, try exporting all field values.", 0, 0, "Nothing to Export");

@@ -4117,7 +4117,7 @@ ClassList.ranger.subclasses[1].push("ranger-monster slayer");
 ClassSubList["rangerua-monster slayer"] = eval(ClassSubList["ranger-monster slayer"].toSource());
 ClassList.rangerua.subclasses[1].push("rangerua-monster slayer");
 
-/*	Revised Subclasses Unearthed Arcana of 2017-05-01
+/*	the Revised Subclasses Unearthed Arcana of 2017-05-01
 	(http://media.wizards.com/2017/dnd/downloads/UA-RevisedSubclasses.pdf)
 */
 //add five subclasses from previous Unearthed Arcana articles: a subclass for the Barbarian, called "Path of the Ancestral Guardian"
