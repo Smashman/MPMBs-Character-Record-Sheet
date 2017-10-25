@@ -38,6 +38,7 @@ RaceList["warforged"] = {
 		walk : { spd : 30, enc : 20 }
 	},
 	languageProfs : ["Common", 1],
+	savetxt : { immune : ["disease"] },
 	age : " are created as adults and will only start to show signs of physical deterioration after 150 years, but have no further aging effects",
 	height : " stand between 6 and 7 feet tall (5'10\" + 2d6\")",
 	weight : " weigh around 300 lb (270 + 2d6 \xD7 4 lb)",

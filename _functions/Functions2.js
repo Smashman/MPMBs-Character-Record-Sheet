@@ -5576,7 +5576,7 @@ function EvalBonus(input, notComp, isSpecial) {
 	};
 	var modStr = notComp === true ? ["", " Mod"] : !isSpecial || isSpecial === "test" ? [notComp + "Comp.Use.Ability.", ".Mod"] : [notComp + "Wildshape." + isSpecial + ".Ability.", ".Mod"];
 	// first remove "dc", add a "+" between abbreviations, and removing double or trailing operators
-	input = input.replace(/dc/ig, "").replace(/(Str|Dex|Con|Int|Wis|Cha|HoS|Prof)(Str|Dex|Con|Int|Wis|Cha|HoS|Prof)/ig, "$1+$2").replace(/(\+|\-|\/|\*)(\+|\-|\/|\*)/g, "$2").replace(/(^(\+|\/|\*))|((\+|\-|\/|\*)$)/g, "");
+	input = input.replace(/,/g, ".").replace(/dc/ig, "").replace(/(Str|Dex|Con|Int|Wis|Cha|HoS|Prof)(Str|Dex|Con|Int|Wis|Cha|HoS|Prof)/ig, "$1+$2").replace(/(\+|\-|\/|\*)(\+|\-|\/|\*)/g, "$2").replace(/(^(\+|\/|\*))|((\+|\-|\/|\*)$)/g, "");
 	// change ability score abbreviations with their modifier
 	["Str", "Dex", "Con", "Int", "Wis", "Cha", "HoS"].forEach(function(AbiS) {
 		input = input.replace(RegExp(AbiS, "ig"), Number(What(modStr[0] + AbiS + modStr[1])));
@@ -5586,7 +5586,7 @@ function EvalBonus(input, notComp, isSpecial) {
 	input = input.replace(/Prof/ig, ProfB);
 	try {
 		output = eval(input);
-		return !isNaN(output) ? Number(output) : 0;
+		return !isNaN(output) ? Math.round(Number(output)) : 0;
 	} catch (err) {
 		return isSpecial === "test" ? undefined : 0;
 	};
