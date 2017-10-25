@@ -9,10 +9,10 @@
 
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds a subclass (for the Cleric, called "Zeal Domain") from the Magic: The Gathering plane of Amonkhet
+	Effect:		This script adds a subclass (for the Cleric, called "Zeal Domain") and a race ("Aven" with 2 subraces) from the Magic: The Gathering plane of Amonkhet
 				This is taken from the Plane Shift: Amonkhet article (https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf)
-	Code by:	/u/MILKB0T (and tiny corrections by MPMB)
-	Date:		2017-08-26 (sheet v12.998)
+	Code by:	/u/MILKB0T and MorePurpleMoreBetter
+	Date:		2017-10-25 (sheet v12.998)
 	
 	Note that this script doesn't add anything else from the Plane Shift: Amonkhet article, just the one subclass
 */
@@ -22,6 +22,49 @@ SourceList["PS:A"] = {
 	abbreviation: "PS:A",
 	group: "Plane Shift",
 	url: "https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf"
+};
+
+RaceList["ibis-headed aven"] = {
+	regExpSearch : /^(?=.*aven)(?=.*ibis).*$/i,
+	name : "Ibis-Headed Aven",
+	sortname : "Aven, Ibis-Headed",
+	source: ["PS:A", 16],
+	plural : "Ibis-Headed Avens",
+	size : 3,
+	speed : {
+		walk : { spd : 25, enc : 15 },
+		fly : { spd : 35, enc : 0 }
+	},
+	languageProfs : ["Common", "Aven"],
+	age : " age like humans and can live into their 80s",
+	height : " stand between 5 and 6 feet tall",
+	weight : " are very slender and their bones are partially hollow to facilitate their flight",
+	heightMetric : " stand between 1,5 and 1,8 metres tall",
+	improvements : "Ibis-Headed Aven: +2 Dexterity, +1 Intelligence;",
+	scores : [0, 2, 0, 1, 0, 0],
+	trait : "Ibis-Headed Aven (+2 Dexterity, +1 Intelligence)\n\nKefnet's Blessing: I can add half my proficiency bonus, rounded down, to any Intelligence check I make that doesn't already include my proficiency bonus."
+};
+
+RaceList["hawk-headed aven"] = {
+	regExpSearch : /^(?=.*aven)(?=.*hawk).*$/i,
+	name : "Hawk-Headed Aven",
+	sortname : "Aven, Hawk-Headed",
+	source: ["PS:A", 16],
+	plural : "Hawk-Headed Avens",
+	size : 3,
+	speed : {
+		walk : { spd : 25, enc : 15 },
+		fly : { spd : 35, enc : 0 }
+	},
+	languageProfs : ["Common", "Aven"],
+	skills : ["Perception"],
+	age : " age like humans and can live into their 80s",
+	height : " stand between 5 and 6 feet tall",
+	weight : " are very slender and their bones are partially hollow to facilitate their flight",
+	heightMetric : " stand between 1,5 and 1,8 metres tall",
+	improvements : "Hawk-Headed Aven: +1 Intelligence, +2 Wisdom;",
+	scores : [0, 0, 0, 1, 2, 0],
+	trait : "Hawk-Headed Aven (+1 Intelligence, +2 Wisdom)\n\nHawkeyed: I have proficiency in the Perception skill.\n\nAttacking at long range doesn't impose disadvantage on my ranged weapon attack rolls."
 };
 
 ClassSubList["cleric-zeal domain"] = {
