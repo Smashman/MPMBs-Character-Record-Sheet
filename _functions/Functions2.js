@@ -4710,7 +4710,7 @@ function ReturnClassFeatures(aClass, feature, level, choice, oldlevel, oldchoice
 	tRe.source = choice && aFea[choice].source ? aFea[choice].source : (aFea.source ? aFea.source : "");
 	
 	for (var aProp in tRe) {
-		if (aProp === "Source") continue;
+		if (aProp === "source") continue;
 		var theP = tRe[aProp];
 		if (theP && isArray(theP)) {
 			var lvlUse = aProp.indexOf("Old") !== -1 && (oldlevel || oldlevel === 0) ? oldlevel : level;
