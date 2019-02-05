@@ -475,45 +475,52 @@ var Base_MagicItemsList = {
 			atwill : true
 		}]
 	},
-	"boots of speed": {
-		name: "Boots of Speed",
-		source: [["SRD", 212], ["D", 155]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "While you wear these boots, you can use a bonus action and click the boots' heels together. If you do, the boots double your walking speed, and any creature that makes an opportunity attack against you has disadvantage on the attack roll. If you click your heels together again, you end the effect.\n   When the boots' property has been used for a total of 10 minutes, the magic ceases to function until you finish a long rest.",
-		attunement: true,
-		magicItemTable: "G"
+	"boots of speed" : { // contributed by AelarTheElfRogue
+		name : "Boots of Speed",
+		source : [["SRD", 212], ["D", 155]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While I wear these boots, I can use a bonus action to double my walking speed, and opportunity attacks against me have disadvantage on the attack roll. I can end the effect as a bonus action. When the boots' property has been used for a total of 10 minutes, the magic ceases to function until I finish a long rest.",
+		descriptionFull : "While you wear these boots, you can use a bonus action and click the boots' heels together. If you do, the boots double your walking speed, and any creature that makes an opportunity attack against you has disadvantage on the attack roll. If you click your heels together again, you end the effect.\n   When the boots' property has been used for a total of 10 minutes, the magic ceases to function until you finish a long rest.",
+		attunement : true,
+		action : ["bonus action", "Double Walking Speed"]
 	},
-	"boots of striding and springing": {
-		name: "Boots of Striding and Springing",
-		source: [["SRD", 212], ["D", 156]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While you wear these boots, your walking speed becomes 30 feet, unless your walking speed is higher, and your speed isn't reduced if you are encumbered or wearing heavy armor. In addition, you can jump three times the normal distance, though you can't jump farther than your remaining movement would allow.",
-		attunement: true,
-		magicItemTable: "F"
+	"boots of striding and springing" : { // contributed by AelarTheElfRogue
+		name : "Boots of Striding and Springing",
+		source : [["SRD", 212], ["D", 156]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "While I wear these boots, my walking speed becomes 30 feet, unless my walking speed is higher, and my speed isn't reduced if I am encumbered or wearing heavy armor. In addition, I can jump three times the normal distance, though I can't jump farther than my remaining movement would allow.",
+		descriptionFull : "While you wear these boots, your walking speed becomes 30 feet, unless your walking speed is higher, and your speed isn't reduced if you are encumbered or wearing heavy armor. In addition, you can jump three times the normal distance, though you can't jump farther than your remaining movement would allow.",
+		attunement : true,
+		speed : { walk : { spd : "fixed30", enc : "fixed30" } }
 	},
-	"boots of the winterlands": {
-		name: "Boots of the Winterlands",
-		source: [["SRD", 212], ["D", 156]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "These furred boots are snug and feel quite warm. While you wear them, you gain the following benefits:\n \u2022 You have resistance to cold damage.\n \u2022 You ignore difficult terrain created by ice or snow.\n \u2022 You can tolerate temperatures as low as -50 degrees Fahrenheit without any additional protection. If you wear heavy clothes, you can tolerate temperatures as low as -100 degrees Fahrenheit.",
-		attunement: true,
-		magicItemTable: "F"
+	"boots of the winterlands" : { // contributed by AelarTheElfRogue
+		name : "Boots of the Winterlands",
+		source : [["SRD", 212], ["D", 156]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "While wearing these boots, I have resistance to cold damage and I ignore difficult terrain created by ice or snow. I can tolerate temperatures as low as −50 degrees Fahrenheit without any additional protection. If I wear heavy clothes, I can tolerate temperatures as low as −100 degrees Fahrenheit.",
+		descriptionFull : "These furred boots are snug and feel quite warm. While you wear them, you gain the following benefits:\n\u25C6 You have resistance to cold damage.\n\u25C6 You ignore difficult terrain created by ice or snow.\n\u25C6 You can tolerate temperatures as low as -50 degrees Fahrenheit without any additional protection. If you wear heavy clothes, you can tolerate temperatures as low as -100 degrees Fahrenheit.",
+		attunement : true,
+		dmgres : ["Cold"],
 	},
-	"bowl of commanding water elementals": {
-		name: "Bowl of Commanding Water Elementals",
-		source: [["SRD", 212], ["D", 156]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "While this bowl is filled with water, you can use an action to speak the bowl's command word and summon a water elemental, as if you had cast the Conjure Elemental spell. The bowl can't be used this way again until the next dawn.\n   The bowl is about 1 foot in diameter and half as deep. It weighs 3 pounds and holds about 3 gallons.",
-		weight: 3,
-		magicItemTable: "G"
+	"bowl of commanding water elementals" : { // contributed by AelarTheElfRogue
+		name : "Bowl of Commanding Water Elementals",
+		source : [["SRD", 212], ["D", 156]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While this bowl is filled with water, I can speak the bowl's command word as an action and summon a water elemental, as if I had cast Conjure Elemental. The bowl can't be used again until the next dawn. The bowl is about 1 foot in diameter and half as deep, and holds about 3 gallons of water.",
+		descriptionFull : "While this bowl is filled with water, you can use an action to speak the bowl's command word and summon a water elemental, as if you had cast the Conjure Elemental spell. The bowl can't be used this way again until the next dawn.\n   The bowl is about 1 foot in diameter and half as deep. It weighs 3 pounds and holds about 3 gallons.",
+		weight : 3,
+		limfeaname : "Summon Water Elemental",
+		usages : 1, 
+		recovery : "dawn",
+		action : ["action", ""]
 	},
 	"bracers of archery": {
 		name: "Bracers of Archery",
@@ -541,25 +548,33 @@ var Base_MagicItemsList = {
 			stopeval : function (v) { return v.wearingArmor || v.usingShield; }
 		}
 	},
-	"brazier of commanding fire elementals": {
-		name: "Brazier of Commanding Fire Elementals",
-		source: [["SRD", 212], ["D", 156]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "While a fire burns in this brass brazier, you can use an action to speak the brazier's command word and summon a fire elemental, as if you had cast the Conjure Elemental spell. The brazier can't be used this way again until the next dawn.\n   The brazier weighs 5 pounds.",
-		weight: 5,
-		magicItemTable: "G"
+	"brazier of commanding fire elementals" : { // contributed by AelarTheElfRogue
+		name : "Brazier of Commanding Fire Elementals",
+		source : [["SRD", 212], ["D", 156]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While a fire burns in this brass brazier, I can use an action to speak the brazier's command word and summon a fire elemental, as if I had cast the Conjure Elemental spell. The brazier can't be used this way again until the next dawn.",
+		descriptionFull : "While a fire burns in this brass brazier, you can use an action to speak the brazier's command word and summon a fire elemental, as if you had cast the Conjure Elemental spell. The brazier can't be used this way again until the next dawn.\n   The brazier weighs 5 pounds.",
+		weight : 5,
+		limfeaname : "Summon Fire Elemental",
+		usages : 1, 
+		recovery : "dawn",
+		action : ["action", ""]
 	},
-	"brooch of shielding": {
-		name: "Brooch of Shielding",
-		source: [["SRD", 212], ["D", 156]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While wearing this brooch, you have resistance to force damage, and you have immunity to damage from the Magic Missile spell.",
-		attunement: true,
-		magicItemTable: "F"
+	"brooch of shielding" : { // contributed by Smashman
+		name : "Brooch of Shielding",
+		source : [["SRD", 212], ["D", 156]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "While wearing this brooch, I have resistance to force damage, and have immunity to damage from the Magic Missile spell.",
+		descriptionFull : "While wearing this brooch, you have resistance to force damage, and you have immunity to damage from the Magic Missile spell.",
+		attunement : true,
+		dmgres : ["Force"],
+		savetxt : {
+			immune : ["damage from the Magic Missile spell"]
+		}
 	},
 	"broom of flying": {
 		name: "Broom of Flying",
@@ -581,66 +596,74 @@ var Base_MagicItemsList = {
 		attunement: true,
 		magicItemTable: "H"
 	},
-	"cape of the mountebank": {
-		name: "Cape of the Mountebank",
-		source: [["SRD", 213], ["D", 157]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "This cape smells faintly of brimstone. While wearing it, you can use it to cast the Dimension Door spell as an action. This property of the cape can't be used again until the next dawn.\n   When you disappear, you leave behind a cloud of smoke, and you appear in a similar cloud of smoke at your destination. The smoke lightly obscures the space you left and the space you appear in, and it dissipates at the end of your next turn. A light or stronger wind disperses the smoke.",
-		magicItemTable: "G"
+	"cape of the mountebank" : { // contributed by Smashman
+		name : "Cape of the Mountebank",
+		source : [["SRD", 213], ["D", 157]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While wearing this cape, I can use it to cast the Dimension Door spell as an action. This property of the cape can't be used again until the next dawn. The cape smells faintly of brimstone. When I disappear, smoke lightly obscures the place that I left and the place that I appear, which dissipates at the end of my next turn.",
+		descriptionFull : "This cape smells faintly of brimstone. While wearing it, you can use it to cast the Dimension Door spell as an action. This property of the cape can't be used again until the next dawn.\n   When you disappear, you leave behind a cloud of smoke, and you appear in a similar cloud of smoke at your destination. The smoke lightly obscures the space you left and the space you appear in, and it dissipates at the end of your next turn. A light or stronger wind disperses the smoke.",
+		action : [["action", " (Dimension Door)"]],
+		usages : 1,
+		spellcastingBonus : [{
+			name: "Cape of the Mountebank",
+			spells: ["dimension door"],
+			selection: ["dimension door"]
+		}]
 	},
-	"carpet of flying, 3 ft. \xD7 5 ft.": {
-		name: "Carpet of Flying, 3 ft. \xD7 5 ft.",
-		source: [["SRD", 213], ["D", 157]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 3 ft. \xD7 5 ft. carpet can carry up to 200 lb. at a fly speed of 80 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity."
+	"carpet of flying" : { // contributed by AelarTheElfRogue
+		name : "Carpet of Flying",
+		source : [["SRD", 213], ["D", 157]],
+		type : "wondrous item",
+		rarity : "very rare",
+		magicItemTable : "H",
+		description : "I can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to my spoken directions if I am within 30 feet of it. A carpet can carry up to twice the weight shown on the table, but it flies at half speed if it carries more than its normal capacity.",
+		descriptionFull : "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n Four sizes of carpet of flying exist. The DM chooses the size of a given carpet or determines it randomly.\n A carpet can carry up to twice the weight shown on the table, but it flies at half speed if it carries more than its normal capacity.",
+		action : ["action", " (Fly)"],
+		choices : ["3 ft. \xD7 5 ft.", "4 ft. \xD7 6 ft.", "5 ft. \xD7 7 ft.", "6 ft. \xD7 9 ft."],
+		"3 ft. \xD7 5 ft." : {
+			description: "I can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to my spoken directions if I am within 30 feet of it. A 3 \xD7 5 ft. carpet can carry up to 200lbs at a fly speed of 80 feet. A carpet can carry up to twice its weight, but flies at half speed if it carries >200lbs.",
+			descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 3 ft. \xD7 5 ft. carpet can carry up to 200 lb. at a fly speed of 80 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity.",
+		},
+		"4 ft. \xD7 6 ft." : {
+			description: "I can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to my spoken directions if I am within 30 feet of it. A 4\xD7x 6 ft. carpet can carry up to 400 lb. at a fly speed of 60 feet. A carpet can carry up to twice this weight, but flies at half speed if it carries >400lbs.",
+			descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 4 ft. \xD7 6 ft. carpet can carry up to 400 lb. at a fly speed of 60 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity.",
+		},
+		"5 ft. \xD7 7 ft." : {
+			description: "I can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to my spoken directions if I am within 30 feet of it. A 5 \xD7 7 ft. carpet can carry up to 600lbs at a fly speed of 40 feet. A carpet can carry up to twice this weight, but flies at half speed if it carries >600lbs.",
+			descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 5 ft. \xD7 7 ft. carpet can carry up to 600 lb. at a fly speed of 40 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity.",
+		},
+		"6 ft. \xD7 9 ft." : {
+			description: "I can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to my spoken directions if I am within 30 feet of it. A 6 \xD7 9 ft. carpet can carry up to 800lbs at a fly speed of 30 feet. A carpet can carry up to twice this weight, but flies at half speed if it carries >800lbs.",
+			descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 6 ft. \xD7 9 ft. carpet can carry up to 800 lb. at a fly speed of 30 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity.",
+		}
 	},
-	"carpet of flying, 4 ft. \xD7 6 ft.": {
-		name: "Carpet of Flying, 4 ft. \xD7 6 ft.",
-		source: [["SRD", 213], ["D", 157]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 4 ft. \xD7 6 ft. carpet can carry up to 400 lb. at a fly speed of 60 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity."
+	"censer of controlling air elementals" : { // contributed by AelarTheElfRogue
+		name : "Censer of Controlling Air Elementals",
+		source : [["SRD", 213], ["D", 158]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While incense is burning in this censer, I can speak the censer's command word as an action and summon an air elemental, as if I had cast Conjure Elemental. The censer can't be used this way again until the next dawn. This 6\" wide, 1' high vessel resembles a chalice with a decorated lid.",
+		descriptionFull : "While incense is burning in this censer, you can use an action to speak the censer's command word and summon an air elemental, as if you had cast the Conjure Elemental spell. The censer can't be used this way again until the next dawn.\n   This 6-inch-wide, 1-foot-high vessel resembles a chalice with a decorated lid. It weighs 1 pound.",
+		weight : 1,
+		limfeaname : "Summon Air Elemental",
+		usages : 1, 
+		recovery : "dawn",
+		action : ["action", ""]
 	},
-	"carpet of flying, 5 ft. \xD7 7 ft.": {
-		name: "Carpet of Flying, 5 ft. \xD7 7 ft.",
-		source: [["SRD", 213], ["D", 157]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 5 ft. \xD7 7 ft. carpet can carry up to 600 lb. at a fly speed of 40 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity."
-	},
-	"carpet of flying, 6 ft. \xD7 9 ft.": {
-		name: "Carpet of Flying, 6 ft. \xD7 9 ft.",
-		source: [["SRD", 213], ["D", 157]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "You can speak the carpet's command word as an action to make the carpet hover and fly. It moves according to your spoken directions, provided that you are within 30 feet of it.\n   A 6 ft. \xD7 9 ft. carpet can carry up to 800 lb. at a fly speed of 30 feet. A carpet can carry up to twice this weight, but it flies at half speed if it carries more than its normal capacity."
-	},
-	"censer of controlling air elementals": {
-		name: "Censer of Controlling Air Elementals",
-		source: [["SRD", 213], ["D", 158]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "While incense is burning in this censer, you can use an action to speak the censer's command word and summon an air elemental, as if you had cast the Conjure Elemental spell. The censer can't be used this way again until the next dawn.\n   This 6-inch-wide, 1-foot-high vessel resembles a chalice with a decorated lid. It weighs 1 pound.",
-		weight: 1,
-		magicItemTable: "G"
-	},
-	"chime of opening": {
-		name: "Chime of Opening",
-		source: [["SRD", 213], ["D", 158]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "This hollow metal tube measures about 1 foot long and weighs 1 pound. You can strike it as an action, pointing it at an object within 120 feet of you that can be opened, such as a door, lid, or lock. The chime issues a clear tone, and one lock or latch on the object opens unless the sound can't reach the object. If no locks or latches remain, the object itself opens.\n   The chime can be used ten times. After the tenth time it cracks and becomes useless.",
-		weight: 1,
-		magicItemTable: "C"
+	"chime of opening" : { // contributed by AelarTheElfRogue
+		name : "Chime of Opening",
+		source : [["SRD", 213], ["D", 158]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "C",
+		description : "I can strike this as an action, pointing it at an object within 120 ft of me that can be opened (i.e. door, lid, lock). One lock or latch on it opens unless the sound can't reach it. If no locks or latches remain, the object itself opens. The chime can be used ten times. After the tenth time it cracks and becomes useless.",
+		descriptionFull : "This hollow metal tube measures about 1 foot long and weighs 1 pound. You can strike it as an action, pointing it at an object within 120 feet of you that can be opened, such as a door, lid, or lock. The chime issues a clear tone, and one lock or latch on the object opens unless the sound can't reach the object. If no locks or latches remain, the object itself opens.\n   The chime can be used ten times. After the tenth time it cracks and becomes useless.",
+		weight : 1,
+		action : ["action", " (Unlock Object)"],
+		usages : 10
 	},
 	"circlet of blasting": {
 		name: "Circlet of Blasting",
@@ -661,15 +684,15 @@ var Base_MagicItemsList = {
 		attunement: true,
 		magicItemTable: "H"
 	},
-	"cloak of displacement": {
-		name: "Cloak of Displacement",
-		source: [["SRD", 214], ["D", 158]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "While you wear this cloak, it projects an illusion that makes you appear to be standing in a place near your actual location, causing any creature to have disadvantage on attack rolls against you. If you take damage, the property ceases to function until the start of your next turn. This property is suppressed while you are incapacitated, restrained, or otherwise unable to move.",
-		attunement: true,
-		magicItemTable: "G"
+	"cloak of displacement" : { // contributed by Smashman
+		name : "Cloak of Displacement",
+		source : [["SRD", 214], ["D", 158]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While I wear this cloak, creatures have disadvantage on attack rolls against me. If I take damage the property ceases to function until the start of my next turn. The property is suppressed while I am incapacitated, restrained or otherwise unable to move.",
+		descriptionFull : "While you wear this cloak, it projects an illusion that makes you appear to be standing in a place near your actual location, causing any creature to have disadvantage on attack rolls against you. If you take damage, the property ceases to function until the start of your next turn. This property is suppressed while you are incapacitated, restrained, or otherwise unable to move.",
+		attunement : true
 	},
 	"cloak of elvenkind": {
 		name: "Cloak of Elvenkind",
@@ -710,7 +733,7 @@ var Base_MagicItemsList = {
 		descriptionFull: "While wearing this cloak with its hood up, you can breathe underwater, and you have a swimming speed of 60 feet. Pulling the hood up or down requires an action.",
 		magicItemTable: "B"
 	},
-	"crystal ball" : { // finished
+	"crystal ball" : { // contributed by AelarTheElfRogue and morepurplemorebetter
 		name : "Crystal Ball",
 		source : [["SRD", 214], ["D", 159]],
 		type : "wondrous item",
@@ -726,37 +749,44 @@ var Base_MagicItemsList = {
 			spells : ["scrying"],
 			selection : ["scrying"],
 			firstCol : "atwill"
+		},
+		choices : ["Crystal Ball ", "Crystal Ball of Mind Reading", "Crystal Ball of Telepathy", "Crystal Ball of True Seeing"],
+		"crystal ball " : {
+			name : "Crystal Ball ",
+		},
+		"crystal ball of mind reading" : {
+			name : "Crystal Ball of Mind Reading",
+			rarity : "legendary",
+			magicItemTable : "I",
+			description : "I can cast Scrying (DC 17) while touching this crystal ball. I can also cast Detect Thoughts (DC 17) while scrying with the crystal ball, targeting creatures I can see within 30 feet of the spell's sensor. I don't need to concentrate on this detect thoughts, but it ends if scrying ends.",
+			descrtiptionFull : "This crystal ball is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.\n You can use an action to cast the detect thoughts spell (save DC 17) while you are scrying with the crystal ball, targeting creatures you can see within 30 feet of the spell's sensor. You don't need to concentrate on this detect thoughts to maintain it during its duration, but it ends if scrying ends.",
+			spellcastingBonus : {
+				name : "DC 17",
+				spells : ["detect thoughts"],
+				selection : ["detect thoughts"],
+			},
+		},
+		"crystal ball of telepathy" : { 
+			name : "Crystal Ball of Telepathy",
+			rarity : "legendary",
+			magicItemTable : "I",
+			description : "I can cast Scrying (DC 17) while touching this crystal ball. While scrying gain telepathy within 30 ft of the spell's sensor. Once per dawn, I can also cast Suggestion (DC 17) while scrying through the sensor on one creature within range. I don't need to concentrate on this suggestion, but it ends if scrying ends.",
+			descriptionFull : "This crystal ball is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.\n While scrying with the crystal ball, you can communicate telepathically with creatures you can see within 30 feet of the spell's sensor. You can also use an action to cast the suggestion spell (save DC 17) through the sensor on one of those creatures. You don't need to concentrate on this suggestion to maintain it during its duration, but it ends if scrying ends. Once used, the suggestion power of the crystal ball can't be used again until the next dawn.",
+			languageProfs : ["Telepathy 30ft. (While Scrying)"],
+			spellcastingBonus : {
+				name : "DC 17",
+				spells : ["suggestion"],
+				selection : ["suggestion"],
+			},
+		},
+		"crystal ball of true seeing" : {
+			name : "Crystal Ball of True Seeing",
+			rarity : "legendary",
+			magicItemTable : "I",
+			description : "I can cast Scrying (DC 17) while touching this crystal ball. While scrying, I have truesight with a radius of 120 feet centered on the spell's sensor.",
+			descrtiptionFull : "This crystal ball is about 6 inches in diameter. While touching it, you can cast the scrying spell (save DC 17) with it.\n While scrying with the crystal ball, you have truesight with a radius of 120 feet centered on the spell's sensor.",
+			vision : [["True Sight (while Scrying with Crystal Ball)", 120]],
 		}
-	},
-	"crystal ball of mind reading": {
-		name: "Crystal Ball of Mind Reading",
-		source: [["SRD", 214], ["D", 159]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "This crystal ball is about 6 inches in diameter. While touching it, you can cast the Scrying spell (save DC 17) with it.\n   You can use an action to cast the Detect Thoughts spell (save DC 17) while you are Scrying with the crystal ball, targeting creatures you can see within 30 feet of the spell's sensor. You don't need to concentrate on this Detect Thoughts to maintain it during its duration, but it ends if Scrying ends.",
-		attunement: true,
-		weight: 3
-	},
-	"crystal ball of telepathy": {
-		name: "Crystal Ball of Telepathy",
-		source: [["SRD", 214], ["D", 159]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "This crystal ball is about 6 inches in diameter. While touching it, you can cast the Scrying spell (save DC 17) with it.\n   While Scrying with the crystal ball, you can communicate telepathically with creatures you can see within 30 feet of the spell's sensor. You can also use an action to cast the Suggestion spell (save DC 17) through the sensor on one of those creatures. You don't need to concentrate on this suggestion to maintain it during its duration, but it ends if Scrying ends. Once used, the suggestion power of the crystal ball can't be used again until the next dawn.",
-		attunement: true,
-		weight: 3
-	},
-	"crystal ball of true seeing": {
-		name: "Crystal Ball of True Seeing",
-		source: [["SRD", 215], ["D", 159]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "This crystal ball is about 6 inches in diameter. While touching it, you can cast the Scrying spell (save DC 17) with it.\n   While Scrying with the crystal ball, you have truesight with a radius of 120 feet centered on the spell's sensor.",
-		attunement: true,
-		weight: 3
 	},
 	"cube of force": {
 		name: "Cube of Force",
@@ -917,105 +947,121 @@ var Base_MagicItemsList = {
 		descriptionFull: "You can use an action to place these shackles on an incapacitated creature. The shackles adjust to fit a creature of Small to Large size. In addition to serving as mundane manacles, the shackles prevent a creature bound by them from using any method of extradimensional movement, including teleportation or travel to a different plane of existence. They don't prevent the creature from passing-through an interdimensional portal.\n   You and any creature you designate when you use the shackles can use an action to remove them. Once every 30 days, the bound creature can make a DC 30 Strength (Athletics) check. On a success, the creature breaks free and destroys the shackles.",
 		magicItemTable: "G"
 	},
-	"dragon scale mail, black": {
-		name: "Dragon Scale Mail, Black",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to acid damage. As an action, I can magically discern the distance and direction to the closest black dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to acid damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest black dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, blue": {
-		name: "Dragon Scale Mail, Blue",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to lightning damage. As an action, I can magically discern the distance and direction to the closest blue dragon in 30 miles. Once I use this action, I can't use it again until the next dawn..",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to lightning damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest blue dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, brass": {
-		name: "Dragon Scale Mail, Brass",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to fire damage. As an action, I can magically discern the distance and direction to the closest brass dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to fire damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest brass dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, bronze": {
-		name: "Dragon Scale Mail, Bronze",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to lightning damage. As an action, I can magically discern the distance and direction to the closest bronze dragon in 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to lightning damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest bronze dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, copper": {
-		name: "Dragon Scale Mail, Copper",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to acid damage. As an action, I can magically discern the distance and direction to the closest copper dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to acid damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest copper dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, gold": {
-		name: "Dragon Scale Mail, Gold",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to fire damage. As an action, I can magically discern the distance and direction to the closest gold dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to fire damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest gold dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, green": {
-		name: "Dragon Scale Mail, Green",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to poison damage. As an action, I can magically discern the distance and direction to the closest green dragon in 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to poison damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest green dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, red": {
-		name: "Dragon Scale Mail, Red",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to fire damage. As an action, I can magically discern the distance and direction to the closest red dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to fire damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest red dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, silver": {
-		name: "Dragon Scale Mail, Silver",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to cold damage. As an action, I can magically discern the distance and direction to the closest silver dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to cold damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest silver dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
-	},
-	"dragon scale mail, white": {
-		name: "Dragon Scale Mail, White",
-		source: [["SRD", 219], ["D", 165]],
-		type: "armor (scale mail)",
-		rarity: "very rare",
-		description: "This scale mail gives +1 to AC, adv. on saves against the Frightful Presence and breath weapons of dragons, and resistance to cold damage. As an action, I can magically discern the distance and direction to the closest white dragon within 30 miles. Once I use this action, I can't use it again until the next dawn.",
-		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to cold damage.\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest white dragon within 30 miles of you. This special action can't be used again until the next dawn.",
-		attunement: true,
-		weight: 45
+	"dragon scale mail" : { // contributed by AelarTheElfRogue
+		name : "Dragon Scale Mail",
+		source : [["SRD", 219], ["D", 165]],
+		type : "armor (scale mail)",
+		rarity : "very rare",
+		attunement : true,
+		weight : 45,
+		allowDuplicates : false,
+		magicItemTable : "H",
+		description : "While wearing this armor, I gain a resistance to a damage type, +1 bonus to AC and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest dragon of the same type within 30 miles of me, once per dawn.",
+		descriptionFull: "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales\n   Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.",
+		savetxt : {
+			adv_vs : ["Dragon's Frightful Presence", "Dragon's Breath"],
+		},
+		addArmor : "Dragon Scale Mail",
+		armorOptions : {
+			regExpSearch : /^(?=.*dragon)(?=.*(scale))(?=.*mail).*$/i,
+			name : "Dragon Scale Mail",
+			source : [["SRD", 219], ["D", 165]],
+			type : "medium",
+			ac : 15, // 1 more AC than normal scale mail because of the +1 magical bonus
+			weight : 45,
+			stealthdis : true
+		},
+		choices : ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"],
+		"black" : {
+			name : "Dragon Scale Mail, Black",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to acid damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest black dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Acid"],
+			limfeaname : "Detect Black Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"blue" : {
+			name : "Dragon Scale Mail, Blue",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to lightning damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest blue dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Lightning"],
+			limfeaname : "Detect Blue Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"brass" : {
+			name : "Dragon Scale Mail, Brass",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to fire damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest brass dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Fire"],
+			limfeaname : "Detect Brass Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"bronze" : {
+			name : "Dragon Scale Mail, Black",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to lightning damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest bronze dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Lightning"],
+			limfeaname : "Detect Bronze Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"copper" : {
+			name : "Dragon Scale Mail, Copper",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to acid damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest copper dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Acid"],
+			limfeaname : "Detect Copper Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"gold" : {
+			name : "Dragon Scale Mail, Gold",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to fire damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest gold dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Fire"],
+			limfeaname : "Detect Gold Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"green" : {
+			name : "Dragon Scale Mail, Green",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to poison damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest green dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Poison"],
+			limfeaname : "Detect Green Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"red" : {
+			name : "Dragon Scale Mail, Red",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to fire damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest red dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Fire"],
+			limfeaname : "Detect Red Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"silver" : {
+			name : "Dragon Scale Mail, Silver",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to cold damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest silver dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Cold"],
+			limfeaname : "Detect Silver Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		},
+		"white" : {
+			name : "Dragon Scale Mail, White",
+			description : "While wearing this armor, I gain a +1 bonus to AC, resistance to cold damage, and advantage on saving throws against the Frightful Presence and breath weapons of dragons. As an action, I can magically discern the distance and direction to the closest white dragon within 30 miles of me, once per dawn.",
+			dmgres: ["Cold"],
+			limfeaname : "Detect White Dragon",
+			action : ["action", " (Dragon Scale Mail)"],
+			usages : 1,
+			recovery : "dawn"
+		}
 	},
 	"dragon slayer" : { // finished
 		name : "Dragon Slayer",
@@ -1054,14 +1100,16 @@ var Base_MagicItemsList = {
 			]
 		}
 	},
-	"dust of disappearance": {
-		name: "Dust of Disappearance",
-		source: [["SRD", 219], ["D", 166]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "Found in a small packet, this powder resembles very fine sand. There is enough of it for one use. When you use an action to throw the dust into the air, you and each creature and object within 10 feet of you become invisible for 2d4 minutes. The duration is the same for all subjects, and the dust is consumed when its magic takes effect. If a creature affected by the dust attacks or casts a spell, the invisibility ends for that creature.",
-		magicItemTable: "B"
+	"dust of disappearance" : { // contributed by AelarTheElfRogue
+		name : "Dust of Disappearance",
+		source : [["SRD", 219], ["D", 166]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "There is enough dust for one use. When I throw the dust into the air as action, me and each creature and object within 10 feet of me become invisible for 2d4 minutes. The duration is the same for all subjects. If a creature affected by the dust attacks or casts a spell, the invisibility ends for that creature.",
+		descriptionFull : "Found in a small packet, this powder resembles very fine sand. There is enough of it for one use. When you use an action to throw the dust into the air, you and each creature and object within 10 feet of you become invisible for 2d4 minutes. The duration is the same for all subjects, and the dust is consumed when its magic takes effect. If a creature affected by the dust attacks or casts a spell, the invisibility ends for that creature.",
+		action : ["action", " (Throw Dust)"],
+		usages : 1
 	},
 	"dust of dryness": {
 		name: "Dust of Dryness",
@@ -1114,47 +1162,56 @@ var Base_MagicItemsList = {
 			modifiers : [3, 3] // add 3 to each to hit and damage because of the magical bonus
 		}
 	},
-	"efreeti bottle": {
-		name: "Efreeti Bottle",
-		source: [["SRD", 220], ["D", 167]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "This painted brass bottle weighs 1 pound. When you use an action to remove the stopper, a cloud of thick smoke flows out of the bottle. At the end of your turn, the smoke disappears with a flash of harmless fire, and an efreeti appears in an unoccupied space within 30 feet of you.\n   The first time the bottle is opened, the DM rolls to determine what happens.\n\n" + toUni("d100") + "\t" + toUni("Effect") + "\n01-10\tThe efreeti attacks you. After fighting for 5 rounds, the efreeti disappears, and the bottle loses its magic.\n11-90\tThe efreeti serves you for 1 hour, doing as you command. Then the efreeti returns to the bottle, and a new stopper contains it. The stopper can't be removed for 24 hours. The next two times the bottle is opened, the same effect occurs. If the bottle is opened a fourth time, the efreeti escapes and disappears, and the bottle loses its magic.\n91-00\tThe efreeti can cast the Wish spell three times for you. It disappears when it grants the final wish or after 1 hour, and the bottle loses its magic.",
-		weight: 1,
-		magicItemTable: "H"
+	"efreeti bottle" : { // contributed by AelarTheElfRogue
+		name : "Efreeti Bottle",
+		source : [["SRD", 220], ["D", 167]],
+		type : "wondrous item",
+		rarity : "very rare",
+		magicItemTable : "H",
+		description : "When I use an action to remove the stopper, a cloud of thick smoke flows out of the bottle. At the end of my turn, an efreeti appears in an unoccupied space within 30 feet of me. The first time the bottle is opened, the DM rolls to determine what happens.",
+		descriptionFull : "This painted brass bottle weighs 1 pound. When you use an action to remove the stopper, a cloud of thick smoke flows out of the bottle. At the end of your turn, the smoke disappears with a flash of harmless fire, and an efreeti appears in an unoccupied space within 30 feet of you.\n   The first time the bottle is opened, the DM rolls to determine what happens.\n\n" + toUni("d100") + "\t" + toUni("Effect") + "\n01-10\tThe efreeti attacks you. After fighting for 5 rounds, the efreeti disappears, and the bottle loses its magic.\n11-90\tThe efreeti serves you for 1 hour, doing as you command. Then the efreeti returns to the bottle, and a new stopper contains it. The stopper can't be removed for 24 hours. The next two times the bottle is opened, the same effect occurs. If the bottle is opened a fourth time, the efreeti escapes and disappears, and the bottle loses its magic.\n91-00\tThe efreeti can cast the Wish spell three times for you. It disappears when it grants the final wish or after 1 hour, and the bottle loses its magic.",
+		weight : 1,
+		limfeaname : "Summon Efreeti",
+		usages : 1, 
+		action : ["action", " (Efreeti Bottle)"]
 	},
-	"elemental gem, blue sapphire": {
-		name: "Elemental Gem, Blue Sapphire",
-		source: [["SRD", 220], ["D", 167]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This gem contains a mote of elemental energy. When you use an action to break the gem, an air elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost."
-	},
-	"elemental gem, emerald": {
-		name: "Elemental Gem, Emerald",
-		source: [["SRD", 220], ["D", 167]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This gem contains a mote of elemental energy. When you use an action to break the gem, a water elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost."
-	},
-	"elemental gem, red corundum": {
-		name: "Elemental Gem, Red Corundum",
-		source: [["SRD", 220], ["D", 167]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This gem contains a mote of elemental energy. When you use an action to break the gem, a fire elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost."
-	},
-	"elemental gem, yellow diamond": {
-		name: "Elemental Gem, Yellow Diamond",
-		source: [["SRD", 220], ["D", 167]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This gem contains a mote of elemental energy. When you use an action to break the gem, an earth elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost."
+	"elemental gem": { // contributed by AelarTheElfRogue
+		name : "Elemental Gem",
+		source : [["SRD", 220], ["D", 167]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "This gem contains a mote of elemental energy. When I use an action to break the gem, an elemental is summoned as if I had cast the Conjure Elemental spell, and the gem's magic is lost. The type of gem determines the elemental summoned by the spell.",
+		descriptionFull : "This gem contains a mote of elemental energy. When you use an action to break the gem, an elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost. The type of gem determines the elemental summoned by the spell.",
+		choices : ["Blue Sapphire", "Emerald", "Red Corundum", "Yellow Diamond"],
+		"blue sapphire" : {
+			description : "This gem contains a mote of elemental energy. When I use an action to break the gem, an air elemental is summoned as if I had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			descriptionFull : "This gem contains a mote of elemental energy. When you use an action to break the gem, an air elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			limfeaname : "Summon Air Elemental",
+			usages : 1, 
+			action : ["action", " (Elemental Gem)"]
+		},
+		"emerald" : {
+			description : "This gem contains a mote of elemental energy. When I use an action to break the gem, a water elemental is summoned as if I had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			descriptionFull : "This gem contains a mote of elemental energy. When you use an action to break the gem, a water elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			limfeaname : "Summon Water Elemental",
+			usages : 1, 
+			action : ["action", " (Elemental Gem)"]
+		},
+		"red corundum" : {
+			description : "This gem contains a mote of elemental energy. When I use an action to break the gem, a fire elemental is summoned as if I had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			descriptionFull : "This gem contains a mote of elemental energy. When you use an action to break the gem, a fire elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			limfeaname : "Summon Fire Elemental",
+			usages : 1, 
+			action : ["action", " (Elemental Gem)"]
+		},
+		"yellow diamond" : {
+			description : "This gem contains a mote of elemental energy. When I use an action to break the gem, an earth elemental is summoned as if I had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			descriptionFull : "This gem contains a mote of elemental energy. When you use an action to break the gem, an earth elemental is summoned as if you had cast the Conjure Elemental spell, and the gem's magic is lost.",
+			limfeaname : "Summon Earth Elemental",
+			usages : 1, 
+			action : ["action", " (Elemental Gem)"]
+		}
 	},
 	"elven chain": {
 		name: "Elven Chain",
@@ -1452,34 +1509,37 @@ var Base_MagicItemsList = {
 		},
 		action : [["bonus action", ""]]
 	},
-	"gloves of missile snaring": {
-		name: "Gloves of Missile Snaring",
-		source: [["SRD", 224], ["D", 172]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "These gloves seem to almost meld into your hands when you don them. When a ranged weapon attack hits you while you're wearing them, you can use your reaction to reduce the damage by 1d10 + your Dexterity modifier, provided that you have a free hand. If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in that hand.",
-		attunement: true,
-		magicItemTable: "F"
+	"gloves of missile snaring" : { // contributed by AelarTheElfRogue
+		name : "Gloves of Missile Snaring",
+		source : [["SRD", 224], ["D", 172]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "When a ranged weapon attack hits me while I'm wearing them, I can use your reaction to reduce the damage by 1d10 + my Dexterity modifier, provided that I have a free hand. If I reduce the damage to 0, I can catch the missile if it is small enough for me to hold in that hand.",
+		descriptionLong : "These gloves seem to almost meld into my hands when I don them. When a ranged weapon attack hits me while I'm wearing them, I can use your reaction to reduce the damage by 1d10 + my Dexterity modifier, provided that I have a free hand. If I reduce the damage to 0, I can catch the missile if it is small enough for me to hold in that hand.",
+		descriptionFull : "These gloves seem to almost meld into your hands when you don them. When a ranged weapon attack hits you while you're wearing them, you can use your reaction to reduce the damage by 1d10 + your Dexterity modifier, provided that you have a free hand. If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in that hand.",
+		attunement : true,
+		action : ["reaction", " (Catch Missle)"]
 	},
-	"gloves of swimming and climbing": {
-		name: "Gloves of Swimming and Climbing",
-		source: [["SRD", 224], ["D", 172]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While wearing these gloves, climbing and swimming don't cost you extra movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.",
-		attunement: true,
-		magicItemTable: "F"
+	"gloves of swimming and climbing" : { // contributed by AelarTheElfRogue
+		name : "Gloves of Swimming and Climbing",
+		source : [["SRD", 224], ["D", 172]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "H",
+		description : "While wearing these gloves, climbing and swimming don't cost me extra movement, and I gain a +5 bonus to Strength (Athletics) checks made to climb or swim.",
+		descriptionFull : "While wearing these gloves, climbing and swimming don't cost you extra movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.",
+		attunement : true
 	},
-	"goggles of night": {
-		name: "Goggles of Night",
-		source: [["SRD", 224], ["D", 172]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While wearing these dark lenses, you have darkvision out to a range of 60 feet. If you already have darkvision. wearing the goggles increases its range by 60 feet.",
-		magicItemTable: "B"
+	"goggles of night" : { // contributed by AelarTheElfRogue
+		name : "Goggles of Night",
+		source : [["SRD", 224], ["D", 172]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "While wearing these dark lenses, I have darkvision out to a range of 60 feet. If I already have darkvision. wearing the goggles increases its range by 60 feet.",
+		descriptionFull : "While wearing these dark lenses, you have darkvision out to a range of 60 feet. If you already have darkvision. wearing the goggles increases its range by 60 feet.",
+		vision : [["Darkvision", "fixed60"], ["Darkvision", "+60"]]
 	},
 	"hammer of thunderbolts": {
 		name: "Hammer of Thunderbolts",
@@ -1681,162 +1741,187 @@ var Base_MagicItemsList = {
 		descriptionFull: "These iron horseshoes come in a set of four. While all four shoes are affixed to the hooves of a horse or similar creature, they increase the creature's walking speed by 30 feet.",
 		magicItemTable: "C"
 	},
-	"immovable rod": {
-		name: "Immovable Rod",
-		source: [["SRD", 226], ["D", 175]],
-		type: "rod",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This flat iron rod has a button on one end. You can use an action to press the button, which causes the rod to become magically fixed in place. Until you or another creature uses an action to push the button again, the rod doesn't move, even if it is defying gravity. The rod can hold up to 8,000 pounds of weight. More weight causes the rod to deactivate and fall. A creature can use an action to make a DC 30 Strength check, moving the fixed rod up to 10 feet on a success",
-		weight: 2,
-		magicItemTable: "B"
+	"immovable rod" : { // contributed by AelarTheElfRogue
+		name : "Immovable Rod",
+		source : [["SRD", 226], ["D", 175]],
+		type : "Rod",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "This flat iron rod has a button on one end. I can use an action to press the button, magically fixing the rod in place. The rod can hold up to 8,000 pounds of weight. More weight causes the rod to deactivate and fall. A creature can use an action to make a DC 30 Strength check, moving the rod up to 10 feet on a success",
+		descriptionLong : "This flat iron rod has a button on one end. I can use an action to press the button, which causes the rod to become magically fixed in place. Until I or another creature uses an action to push the button again, the rod doesn't move, even if it is defying gravity. The rod can hold up to 8,000 pounds of weight. More weight causes the rod to deactivate and fall. A creature can use an action to make a DC 30 Strength check, moving the fixed rod up to 10 feet on a success",
+		descriptionFull : "This flat iron rod has a button on one end. You can use an action to press the button, which causes the rod to become magically fixed in place. Until you or another creature uses an action to push the button again, the rod doesn't move, even if it is defying gravity. The rod can hold up to 8,000 pounds of weight. More weight causes the rod to deactivate and fall. A creature can use an action to make a DC 30 Strength check, moving the fixed rod up to 10 feet on a success",
+		weight : 2,
+		action : ["action", " (Activate/Deactivate)"]
 	},
-	"ioun stone, absorption": {
-		name: "Ioun Stone, Absorption",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   While this pale lavender ellipsoid orbits your head, you can use your reaction to cancel a spell of 4th level or lower cast by a creature you can see and targeting only you.\n   Once the stone has canceled 20 levels of spells, it burns out and turns dull gray, losing its magic. If you are targeted by a spell whose level is higher than the number of spell levels the stone has left, the stone can't cancel it.",
-		attunement: true
+	"ioun stone" : { // contributed by AelarTheElfRogue
+		name : "Ioun Stone",
+		type : "wondrous item",
+		rarity : "varies",
+		description : "Set the type of stone using the button in this line. An Ioun stone confers a benefit to you. You can use an action to seize and stow the stone, ending its effect. A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.",
+		descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.",
+		attunement : true,
+		allowDuplicates : true,
+		choices : ["Absorption", "Agility", "Awareness", "Fortitude", "Greater Absorption", "Insight", "Intellect", "Leadership", "Mastery", "Protection", "Regeneration", "Reserve", "Strength", "Sustenance"],
+		"absorption" : {
+			name : "Ioun Stone, Absorption",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "While this pale lavender ellipsoid orbits my head, I can use my reaction to cancel a spell of 4th level or lower cast by a creature I can see and targeting only me. The stone can cancel 20 levels of spells. I can't cancel a spell whose level is high than the number of spell levels the stone has left.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   While this pale lavender ellipsoid orbits your head, you can use your reaction to cancel a spell of 4th level or lower cast by a creature you can see and targeting only you.\n   Once the stone has canceled 20 levels of spells, it burns out and turns dull gray, losing its magic. If you are targeted by a spell whose level is higher than the number of spell levels the stone has left, the stone can't cancel it.",
+			attunement : true,
+			action : ["reaction", "Cancel Spell (Ioun Stone, Absorption)"],
+			usages : 20,
+		},
+		"agility" : {
+			name : "Ioun Stone, Agility",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Dexterity score increases by 2, to a maximum of 20, while this deep red sphere orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Dexterity score increases by 2, to a maximum of 20, while this deep red sphere orbits your head.",
+			attunement : true,
+			scores : [0, 2, 0, 0, 0, 0]
+		},
+		"awareness" : {
+			name : "Ioun Stone, Awareness",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "rare",
+			description : "I can't be surprised while this dark blue rhomboid orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You can't be surprised while this dark blue rhomboid orbits your head.",
+			attunement : true
+		},
+		"fortitude" : {
+			name : "Ioun Stone, Fortitude",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Constitution score increases by 2, to a maximum of 20, while this pink rhomboid orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Constitution score increases by 2, to a maximum of 20, while this pink rhomboid orbits your head.",
+			attunement : true,
+			scores : [0, 0, 2, 0, 0, 0]
+		},
+		"greater absorption" : {
+			name : "Ioun Stone, Greater Absorption",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "legendary",
+			description : "While this marbled lavender and green ellipsoid orbits my head, I can use my reaction to cancel a spell of 8th level or lower cast by a creature I can see and targeting only me. The stone can cancel 50 levels of spells. I can't cancel a spell whose level is high than the number of spell levels the stone has left.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   While this marbled lavender and green ellipsoid orbits your head, you can use your reaction to cancel a spell of 8th level or lower cast by a creature you can see and targeting only you. Once the stone has canceled 50 levels of spells, it burns out and turns dull gray, losing its magic. If you are targeted by a spell whose level is higher than the number of spell levels the stone has left, the stone can't cancel it.",
+			attunement : true,
+			action : ["reaction", "Cancel Spell (Ioun Stone, Greater Absorption)"],
+			usages : 50,
+		},
+		"insight" : {
+			name : "Ioun Stone, Insight",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Wisdom score increases by 2, to a maximum of 20, while this incandescent blue sphere orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Wisdom score increases by 2, to a maximum of 20, while this incandescent blue sphere orbits your head.",
+			attunement : true,
+			scores : [0, 0, 0, 0, 2, 0]
+		},
+		"intellect" : {
+			name : "Ioun Stone, Intellect",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Intelligence score increases by 2, to a maximum of 20, while this marbled scarlet and blue sphere orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Intelligence score increases by 2, to a maximum of 20, while this marbled scarlet and blue sphere orbits your head.",
+			attunement : true,
+			scores : [0, 0, 0, 2, 0, 0]
+		},
+		"leadership" : {
+			name : "Ioun Stone, Leadership",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Charisma score increases by 2, to a maximum of 20, while this marbled pink and green sphere orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Charisma score increases by 2, to a maximum of 20, while this marbled pink and green sphere orbits your head.",
+			attunement : true,
+			scores : [0, 0, 0, 0, 0, 2]
+		},
+		"mastery" : {
+			name : "Ioun Stone, Mastery",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "legendary",
+			description : "My proficiency bonus increases by 1 while this pale green prism orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your proficiency bonus increases by 1 while this pale green prism orbits your head.",
+			attunement : true,
+			addMod : [
+				{type: "", field : "Proficiency Bonus Modifier", mod : "1", text : "My proficiency bonus increases by 1." },
+			],
+		},
+		"protection" : {
+			name : "Ioun Stone, Protection",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "rare",
+			description : "I gain a +1 bonus to AC while this dusty rose prism orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You gain a +1 bonus to AC while this dusty rose prism orbits your head.",
+			attunement : true,
+			extraAC : [{mod : 1, magic : true, text : "I gain a +1 bonus to AC while attuned to the Ioun Stone of Protection."}]
+		},
+		"regeneration" : {
+			name : "Ioun Stone, Regeneration",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "legendary",
+			description : "I regain 15 hit points at the end of each hour this pearly white spindle orbits my head, provided that I have at least 1 hit point.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You regain 15 hit points at the end of each hour this pearly white spindle orbits your head, provided that you have at least 1 hit point.",
+			attunement : true
+		},
+		"reserve" : {
+			name : "Ioun Stone, Reserve",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "rare",
+			description : "This vibrant purple prism can store 3 levels worth of spells in it. Any creature can cast a spell of 1st through 3rd level into the stone by touching it as the spell is cast. The level of the slot used to cast the spell determines how much space it uses. While this stone orbits your head, you can cast any spell stored in it.",
+			descriptionLong : "This vibrant purple prism can store 3 levels worth of spells at a time. Any creature can cast a spell of 1st through 3rd level into the stone by touching it as the spell is cast. If the stone can't hold the spell, the spell is expended without effect. The level of the slot used to cast the spell determines how much space it uses. While this stone orbits your head, you can cast any spell stored in it. The spell uses the slot level, spell save DC, spell attack bonus, and spellcasting ability of the original caster, but is otherwise treated as if you cast the spell. The spell cast from the stone is no longer stored in it, freeing up space.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   This vibrant purple prism stores spells cast into it, holding them until you use them. The stone can store up to 3 levels worth of spells at a time. When found, it contains 1d4-1 levels of stored spells chosen by the DM.\n   Any creature can cast a spell of 1st through 3rd level into the stone by touching it as the spell is cast. The spell has no effect, other than to be stored in the stone. If the stone can't hold the spell, the spell is expended without effect. The level of the slot used to cast the spell determines how much space it uses.\n   While this stone orbits your head, you can cast any spell stored in it. The spell uses the slot level, spell save DC, spell attack bonus, and spellcasting ability of the original caster, but is otherwise treated as if you cast the spell. The spell cast from the stone is no longer stored in it, freeing up space.",
+			attunement : true,
+			usages : 3,
+		},
+		"strength" : {
+			name : "Ioun Stone, Strength",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "very rare",
+			description : "My Strength score increases by 2, to a maximum of 20, while this pale blue rhomboid orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Strength score increases by 2, to a maximum of 20, while this pale blue rhomboid orbits your head.",
+			attunement : true,
+			scores : [2, 0, 0, 0, 0, 0]
+		},
+		"sustenance" : {
+			name : "Ioun Stone, Sustenance",
+			source : [["SRD", 227], ["D", 176]],
+			rarity : "rare",
+			description : "I don't need to eat or drink while this clear spindle orbits my head.",
+			descriptionFull : "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You don't need to eat or drink while this clear spindle orbits your head.",
+			attunement : true,
+		}
 	},
-	"ioun stone, agility": {
-		name: "Ioun Stone, Agility",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Dexterity score increases by 2, to a maximum of 20, while this deep red sphere orbits your head.",
-		attunement: true
-	},
-	"ioun stone, awareness": {
-		name: "Ioun Stone, Awareness",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You can't be surprised while this dark blue rhomboid orbits your head.",
-		attunement: true,
-		magicItemTable: "G"
-	},
-	"ioun stone, fortitude": {
-		name: "Ioun Stone, Fortitude",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Constitution score increases by 2, to a maximum of 20, while this pink rhomboid orbits your head.",
-		attunement: true
-	},
-	"ioun stone, greater absorption": {
-		name: "Ioun Stone, Greater Absorption",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   While this marbled lavender and green ellipsoid orbits your head, you can use your reaction to cancel a spell of 8th level or lower cast by a creature you can see and targeting only you. Once the stone has canceled 50 levels of spells, it burns out and turns dull gray, losing its magic. If you are targeted by a spell whose level is higher than the number of spell levels the stone has left, the stone can't cancel it.",
-		attunement: true,
-		magicItemTable: "I"
-	},
-	"ioun stone, insight": {
-		name: "Ioun Stone, Insight",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Wisdom score increases by 2, to a maximum of 20, while this incandescent blue sphere orbits your head.",
-		attunement: true,
-		magicItemTable: "H"
-	},
-	"ioun stone, intellect": {
-		name: "Ioun Stone, Intellect",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Intelligence score increases by 2, to a maximum of 20, while this marbled scarlet and blue sphere orbits your head.",
-		attunement: true,
-		magicItemTable: "H"
-	},
-	"ioun stone, leadership": {
-		name: "Ioun Stone, Leadership",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Charisma score increases by 2, to a maximum of 20, while this marbled pink and green sphere orbits your head.",
-		attunement: true,
-		magicItemTable: "H"
-	},
-	"ioun stone, mastery": {
-		name: "Ioun Stone, Mastery",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your proficiency bonus increases by 1 while this pale green prism orbits your head.",
-		attunement: true,
-		magicItemTable: "I"
-	},
-	"ioun stone, protection": {
-		name: "Ioun Stone, Protection",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You gain a +1 bonus to AC while this dusty rose prism orbits your head.",
-		attunement: true,
-		magicItemTable: "G"
-	},
-	"ioun stone, regeneration": {
-		name: "Ioun Stone, Regeneration",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "legendary",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You regain 15 hit points at the end of each hour this pearly white spindle orbits your head, provided that you have at least 1 hit point.",
-		attunement: true,
-		magicItemTable: "I"
-	},
-	"ioun stone, reserve": {
-		name: "Ioun Stone, Reserve",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   This vibrant purple prism stores spells cast into it, holding them until you use them. The stone can store up to 3 levels worth of spells at a time. When found, it contains 1d4-1 levels of stored spells chosen by the DM.\n   Any creature can cast a spell of 1st through 3rd level into the stone by touching it as the spell is cast. The spell has no effect, other than to be stored in the stone. If the stone can't hold the spell, the spell is expended without effect. The level of the slot used to cast the spell determines how much space it uses.\n   While this stone orbits your head, you can cast any spell stored in it. The spell uses the slot level, spell save DC, spell attack bonus, and spellcasting ability of the original caster, but is otherwise treated as if you cast the spell. The spell cast from the stone is no longer stored in it, freeing up space.",
-		attunement: true,
-		magicItemTable: "G"
-	},
-	"ioun stone, strength": {
-		name: "Ioun Stone, Strength",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   Your Strength score increases by 2, to a maximum of 20, while this pale blue rhomboid orbits your head.",
-		attunement: true,
-		magicItemTable: "H"
-	},
-	"ioun stone, sustenance": {
-		name: "Ioun Stone, Sustenance",
-		source: [["SRD", 227], ["D", 176]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "An Ioun stone is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of Ioun stone exist, each type a distinct combination of shape and color.\n   When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.\n   A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.\n   You don't need to eat or drink while this clear spindle orbits your head.",
-		attunement: true,
-		magicItemTable: "G"
-	},
-	"iron bands of bilarro": {
-		name: "Iron Bands of Bilarro",
-		source: [["SRD", 228], ["D", 177]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "This rusty iron sphere measures 3 inches in diameter and weighs 1 pound. You can use an action to speak the command word and throw the sphere at a Huge or smaller creature you can see within 60 feet of you. As the sphere moves through the air, it opens into a tangle of metal bands.\n   Make a ranged attack roll with an attack bonus equal to your Dexterity modifier plus your proficiency bonus. On a hit, the target is restrained until you take a bonus action to speak the command word again to release it. Doing so, or missing with the attack, causes the bands to contract and become a sphere once more.\n   A creature, including the one restrained, can use an action to make a DC 20 Strength check to break the iron bands. On a success, the item is destroyed, and the restrained creature is freed. If the check fails, any further attempts made by that creature automatically fail until 24 hours have elapsed.\n   Once the bands are used, they can't be used again until the next dawn.",
-		weight: 1,
-		magicItemTable: "G"
+	"iron bands of bilarro": { // contributed by AelarTheElfRogue
+		name : "Iron Bands of Bilarro",
+		nameAlt : "Iron Bands of Binding",
+		source : [["SRD", 228], ["D", 177]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		attunement : false,
+		weight : 1,
+		allowDuplicates : false,
+		description : "I can make a ranged attack roll (Dex+Prof) to restrain creature. Bonus action to release the creature. DC 20 Strength check to break the iron bands, freeing creature and destroying bands. On failure, all further attempts fail for 24 hours. Once used, the iron bands can’t be used again until the next dawn.",
+		descriptionLong : "I can make a ranged attack roll with an attack bonus equal to my Dexterity modifier plus Proficiency Bonus. On a hit, the target is restrained until I take a bonus action to speak the command word again to release it. Doing so, or missing with the attack, causes the bands to contract and become a sphere once more. DC 20 Strength check to break the iron bands. On a success, the item is destroyed, and the restrained creature is freed. If the check fails, any further attempts made by that creature automatically fail until 24 hours have elapsed. Once the bands are used, they can’t be used again until the next dawn.",
+		descriptionFull : "This rusty iron sphere measures 3 inches in diameter and weighs 1 pound. You can use an action to speak the command word and throw the sphere at a Huge or smaller creature you can see within 60 feet of you. As the sphere moves through the air, it opens into a tangle of metal bands.\n Make a ranged attack roll with an attack bonus equal to your Dexterity modifier plus your Proficiency Bonus. On a hit, the target is restrained until you take a bonus action to speak the command word again to release it. Doing so, or missing with the attack, causes the bands to contract and become a sphere once more.\n A creature, including the one restrained, can use an action to make a DC 20 Strength check to break the iron bands. On a success, the item is destroyed, and the restrained creature is freed. If the check fails, any further attempts made by that creature automatically fail until 24 hours have elapsed.\n Once the bands are used, they can’t be used again until the next dawn.",
+		usages : 1,
+		recovery : "dawn",
+		action : [["action", " (Throw)"],["bonus action", " (Release)"]],
+		addWeapons : ["Iron Bands of Bilarro"],
+		weaponOptions : {
+			regExpSearch : /^(?=.*iron)(?=.*bands)(?=.*of)(?=.*bilarro|binding).*$/i,
+			name : "Iron Bands of Bilarro",
+			nameAlt : "Iron Bands of Binding",
+			source : [["SRD", 228], ["D", 177]],
+			list : "ranged",
+			ability : 2,
+			type : "Natural",
+			damage : [0, 0, ""],
+			range : "60 ft",
+			description : "Restrains Huge or smaller creature; DC 20 Strength check to break out",
+			abilitytodamage : false,
+			weight : 1,
+		}
 	},
 	"iron flask": {
 		name: "Iron Flask",
@@ -2135,7 +2220,7 @@ var Base_MagicItemsList = {
 			]
 		}
 	},
-	oathbow: {
+	"oathbow": {
 		name: "Oathbow",
 		source: [["SRD", 231], ["D", 183]],
 		type: "weapon (longbow)",
@@ -2146,86 +2231,92 @@ var Base_MagicItemsList = {
 		weight: 2,
 		magicItemTable: "H"
 	},
-	"oil of etherealness": {
-		name: "Oil of Etherealness",
-		source: [["SRD", 231], ["D", 183]],
-		type: "potion",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "Beads of this cloudy gray oil form on the outside of its container and quickly evaporate. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of the Etherealness spell for 1 hour.",
-		weight: 0.5,
-		magicItemTable: "C"
+	"oil of etherealness" : { // contributed by AelarTheElfRogue
+		name : "Oil of Etherealness",
+		source : [["SRD", 231], ["D", 183]],
+		type : "Potion",
+		rarity : "rare",
+		magicItemTable : "C",
+		description : "This oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of the Etherealness spell for 1 hour.",
+		descriptionFull : "Beads of this cloudy gray oil form on the outside of its container and quickly evaporate. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of the Etherealness spell for 1 hour.",
+		weight : 0.5
 	},
-	"oil of sharpness": {
-		name: "Oil of Sharpness",
-		source: [["SRD", 232], ["D", 184]],
-		type: "potion",
-		rarity: "very rare",
-		description: "",
-		descriptionFull: "This clear, gelatinous oil sparkles with tiny, ultrathin silver shards. The oil can coat one slashing or piercing weapon or up to 5 pieces of slashing or piercing ammunition. Applying the oil takes 1 minute. For 1 hour, the coated item is magical and has a +3 bonus to attack and damage rolls.",
-		weight: 0.5,
-		magicItemTable: "D"
+	"oil of sharpness" : { // contributed by AelarTheElfRogue
+		name : "Oil of Sharpness",
+		source : [["SRD", 232], ["D", 184]],
+		type : "Potion",
+		rarity : "very rare",
+		magicItemTable : "D",
+		description : "This clear, gelatinous oil sparkles with tiny, ultrathin silver shards. The oil can coat one slashing or piercing weapon or up to 5 pieces of slashing or piercing ammunition. Applying the oil takes 1 minute. For 1 hour, the coated item is magical and has a +3 bonus to attack and damage rolls.",
+		descriptionFull : "This clear, gelatinous oil sparkles with tiny, ultrathin silver shards. The oil can coat one slashing or piercing weapon or up to 5 pieces of slashing or piercing ammunition. Applying the oil takes 1 minute. For 1 hour, the coated item is magical and has a +3 bonus to attack and damage rolls.",
+		weight : 0.5
 	},
-	"oil of slipperiness": {
-		name: "Oil of Slipperiness",
-		source: [["SRD", 232], ["D", 184]],
-		type: "potion",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "This sticky black unguent is thick and heavy in the container, but it flows quickly when poured. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of a Freedom of Movement spell for 8 hours.\n   Alternatively, the oil can be poured on the ground as an action, where it covers a 10-foot square, duplicating the effect of the Grease spell in that area for 8 hours.",
-		weight: 0.5,
-		magicItemTable: "B"
+	"oil of slipperiness" : { // contributed by AelarTheElfRogue
+		name : "Oil of Slipperiness",
+		source : [["SRD", 232], ["D", 184]],
+		type : "Potion",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "This oil can cover a Medium or smaller creature, along with its equipment. The affected creature then gains the effect of a Freedom of Movement spell for 8 hours. The oil can be poured on the ground as an action, where it covers a 10-foot square, duplicating the effect of the Grease spell in that area for 8 hours.",
+		descriptionLong : "This sticky black unguent is thick and heavy in the container, but it flows quickly when poured. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of a Freedom of Movement spell for 8 hours. Alternatively, the oil can be poured on the ground as an action, where it covers a 10-foot square, duplicating the effect of the Grease spell in that area for 8 hours.",
+		descriptionFull : "This sticky black unguent is thick and heavy in the container, but it flows quickly when poured. The oil can cover a Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of a Freedom of Movement spell for 8 hours.\n   Alternatively, the oil can be poured on the ground as an action, where it covers a 10-foot square, duplicating the effect of the Grease spell in that area for 8 hours.",
+		weight : 0.5
 	},
-	"pearl of power": {
-		name: "Pearl of Power",
-		source: [["SRD", 232], ["D", 184]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While this pearl is on your person, you can use an action to speak its command word and regain one expended spell slot. If the expended slot was of 4th level or higher, the new slot is 3rd level. Once you have used the pearl, it can't be used again until the next dawn.",
-		attunement: true,
-		magicItemTable: "F"
+	"pearl of power": { // contributed by AelarTheElfRogue
+		name : "Pearl of Power",
+		source : [["SRD", 232], ["D", 184]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "While this pearl is on my person, I can use an action to speak its command word and regain one expended spell slot. If the expended slot was of 4th level or higher, the new slot is 3rd level. Once I have used the pearl, it can't be used again until the next dawn.",
+		descriptionFull : "While this pearl is on your person, you can use an action to speak its command word and regain one expended spell slot. If the expended slot was of 4th level or higher, the new slot is 3rd level. Once you have used the pearl, it can't be used again until the next dawn.",
+		attunement : true,
+		recovery : "dawn",
+		usages : 1,
+		action : ["action", " (Regain Spell Slot)"]
 	},
-	"periapt of health": {
-		name: "Periapt of Health",
-		source: [["SRD", 232], ["D", 184]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "You are immune to contracting any disease while you wear this pendant. If you are already infected with a disease, the effects of the disease are suppressed you while you wear the pendant.",
-		weight: 1,
-		magicItemTable: "C"
+	"periapt of health" : { // contributed by AelarTheElfRogue
+		name : "Periapt of Health",
+		source : [["SRD", 232], ["D", 184]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "C",
+		description : "I am immune to contracting any disease while I wear this pendant. If I am already infected with a disease, the effects of the disease are suppressed while I wear the pendant.",
+		descriptionFull : "You are immune to contracting any disease while you wear this pendant. If you are already infected with a disease, the effects of the disease are suppressed while you wear the pendant.",
+		weight : 1,
+		savetxt : { immune : ["disease"]}
 	},
-	"periapt of proof against poison": {
-		name: "Periapt of Proof Against Poison",
-		source: [["SRD", 232], ["D", 184]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "This delicate silver chain has a brilliant-cut black gem pendant. While you wear it, poisons have no effect on you. You are immune to the poisoned condition and have immunity to poison damage.",
-		weight: 1,
-		magicItemTable: "G"
+	"periapt of proof against poison" : { // contributed by AelarTheElfRogue
+		name : "Periapt of Proof Against Poison",
+		source : [["SRD", 232], ["D", 184]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "This delicate silver chain has a brilliant-cut black gem pendant. While I wear it, poisons have no effect on me. I am immune to the poisoned condition and have immunity to poison damage.",
+		descriptionFull : "This delicate silver chain has a brilliant-cut black gem pendant. While you wear it, poisons have no effect on you. You are immune to the poisoned condition and have immunity to poison damage.",
+		weight : 1,
+		savetxt : { immune : ["poison"]}
 	},
-	"periapt of wound closure": {
-		name: "Periapt of Wound Closure",
-		source: [["SRD", 232], ["D", 184]],
-		type: "wondrous item",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "While you wear this pendant, you stabilize whenever you are dying at the start of your turn. In addition, whenever you roll a Hit Die to regain hit points, double the number of hit points it restores.",
-		attunement: true,
-		weight: 1,
-		magicItemTable: "F"
+	"periapt of wound closure" : { // contributed by AelarTheElfRogue
+		name : "Periapt of Wound Closure",
+		source : [["SRD", 232], ["D", 184]],
+		type : "wondrous item",
+		rarity : "uncommon",
+		magicItemTable : "F",
+		description : "While I wear this pendant, I stabilize whenever I am dying at the start of my turn. In addition, whenever I roll a Hit Die to regain hit points, double the number of hit points it restores.",
+		descriptionFull : "While you wear this pendant, you stabilize whenever you are dying at the start of your turn. In addition, whenever you roll a Hit Die to regain hit points, double the number of hit points it restores.",
+		attunement : true,
+		weight : 1
 	},
-	"philter of love": {
-		name: "Philter of Love",
-		source: [["SRD", 232], ["D", 184]],
-		type: "potion",
-		rarity: "uncommon",
-		description: "",
-		descriptionFull: "The next time you see a creature within 10 minutes after drinking this philter, you become charmed by that creature for 1 hour. If the creature is of a species and gender you are normally attracted to, you regard it as your true love while you are charmed. This potion's rose-hued, effervescent liquid contains one easy-to-miss bubble shaped like a heart.",
-		weight: 0.5,
-		magicItemTable: "B"
+	"philter of love" : { // contributed by AelarTheElfRogue
+		name : "Philter of Love",
+		source : [["SRD", 232], ["D", 184]],
+		type : "Potion",
+		rarity : "uncommon",
+		magicItemTable : "B",
+		description : "The next time I see a creature within 10 minutes after drinking this philter, I become charmed by that creature for 1 hour. If the creature is of a species and gender I am normally attracted to, I regard it as my true love while I am charmed. ",
+		descriptionFull : "The next time you see a creature within 10 minutes after drinking this philter, you become charmed by that creature for 1 hour. If the creature is of a species and gender you are normally attracted to, you regard it as your true love while you are charmed. This potion's rose-hued, effervescent liquid contains one easy-to-miss bubble shaped like a heart.",
+		weight : 0.5
 	},
 	"pipes of haunting": {
 		name: "Pipes of Haunting",
@@ -3392,15 +3483,19 @@ var Base_MagicItemsList = {
 		weight: 4,
 		magicItemTable: "G"
 	},
-	"stone of controlling earth elementals": {
-		name: "Stone of Controlling Earth Elementals",
-		source: [["SRD", 0], ["D", 205]],
-		type: "wondrous item",
-		rarity: "rare",
-		description: "",
-		descriptionFull: "If the stone is touching the ground, you can use an action to speak its command word and summon an earth elemental, as if you had cast the Conjure Elemental spell. The stone can't be used this way again until the next dawn. The stone weighs 5 pounds.",
-		weight: 5,
-		magicItemTable: "G"
+	"stone of controlling earth elementals" : { // contributed by AelarTheElfRogue
+		name : "Stone of Controlling Earth Elementals",
+		source : [["SRD", 246], ["D", 205]],
+		type : "wondrous item",
+		rarity : "rare",
+		magicItemTable : "G",
+		description : "While this stone touches the ground, I can use an action to speak the stone's command word and summon a earth elemental, as if I had cast the Conjure Elemental spell. The stone can't be used this way again until the next dawn.",
+		descriptionFull : "If the stone is touching the ground, you can use an action to speak its command word and summon an earth elemental, as if you had cast the Conjure Elemental spell. The stone can't be used this way again until the next dawn. The stone weighs 5 pounds.",
+		weight : 5,
+		limfeaname : "Summon Earth Elemental",
+		usages : 1, 
+		recovery : "dawn",
+		action : ["action", ""]
 	},
 	"stone of good luck": {
 		name: "Stone of Good Luck",
