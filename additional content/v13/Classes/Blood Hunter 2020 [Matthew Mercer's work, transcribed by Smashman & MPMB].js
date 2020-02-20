@@ -274,9 +274,9 @@ ClassList["blood hunter"] = {
 			]),
 			speed : { allModes : "+5" },
 			addMod : [
-				{ type : "save", field : "Str", mod : "max[Int|1]", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" },
-				{ type : "save", field : "Dex", mod : "max[Int|1]", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" },
-				{ type : "save", field : "Con", mod : "max[Int|1]", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" }
+				{ type : "save", field : "Str", mod : "max(Int|1)", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" },
+				{ type : "save", field : "Dex", mod : "max(Int|1)", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" },
+				{ type : "save", field : "Con", mod : "max(Int|1)", text : "I add my Intelligence modifier (min 1) to my Strength, Dexterity and Constitution saving throws" }
 			],
 		},
 		"brand of tethering" : {
